@@ -44,7 +44,7 @@ foreach ($groups as $key => $value) {
           <td>".stripslashes($info->TF)."</td>
           <td>".stripslashes($info->SF)."</td>
           <td>".stripslashes($info->TRF)."</td>
-          <td>".stripslashes($info->COL)."</td>
+          <td>".stripslashes($info->CHO)."</td>
           <td>".stripslashes($info->SOD)."</td>
           <td>".stripslashes($info->NC)."</td>
           <td>".stripslashes($info->TC)."</td>
