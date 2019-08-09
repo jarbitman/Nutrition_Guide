@@ -28,6 +28,7 @@ foreach ($groups as $key => $value) {
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>PROTEIN</th>
       </tr>
 
+      </table>
   </div>";
 }
 echo "</div>";
