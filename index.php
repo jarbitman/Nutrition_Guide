@@ -11,11 +11,11 @@ echo " <div id=\"accordion\">";
 foreach ($groups as $key => $value) {
   echo "  <h3 style='background-color:#b2d235;color:#FFFFFF;'>$value</h3>
   <div>
-  <table class=\"table-autosort:2 table-stripeclass:alternate table-autostripe full_width\">
+  <table class=\"table-autosort:2 table-stripeclass:alternate table-autostripe full_width\" style='width:100%;'>
     <thead>
       <tr>
       <th class=\"\"  style='background-color:#0e2244;color:#FFFFFF;'></th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>CALORIES</th>
+      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;padding:3px;'>CALORIES</th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TOTAL FAT</th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>SAT FAT</th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TRANS FAT</th>
