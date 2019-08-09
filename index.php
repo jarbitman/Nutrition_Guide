@@ -7,25 +7,35 @@ $groups[3]="BOWLS/BAR-RITOS";
 $groups[4]="CHILIS/SOUPS";
 $groups[5]="SALADS/WRAPS";
 $groups[6]="KIDS MENU";
-echo " <div id=\"accordion\">";
+echo "
+<style>
+th {
+  background-color:#0e2244;
+  color:#FFFFFF;
+}
+tr.alternate{
+  background-color:#ccf
+}
+</style>
+<div id=\"accordion\">";
 foreach ($groups as $key => $value) {
   echo "  <h3 style='background-color:#b2d235;color:#FFFFFF;'>$value</h3>
   <div>
   <table id=\"nut-".$key."\" class=\"table-autosort:2 table-stripeclass:alternate table-autostripe full_width\" style='width:100%;'>
     <thead>
       <tr>
-      <th class=\"\"  style='background-color:#0e2244;color:#FFFFFF;padding:3px;'></th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>PROTEIN</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>CALS</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TOTAL<br>FAT</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>SAT<br>FAT</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TRANS<br>FAT</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>CHOLES-<br>TEROL</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>SODIUM</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>NET<br>CARBS</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TOTAL<br>CARBS</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>DIETARY<br>FIBER</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>SUGARS</th>
+      <th class=\"\"  style='padding:3px;'></th>
+      <th class=\"table-sortable:numeric\"  style=''>PROTEIN</th>
+      <th class=\"table-sortable:numeric\"  style=''>CALS</th>
+      <th class=\"table-sortable:numeric\"  style=''>TOTAL<br>FAT</th>
+      <th class=\"table-sortable:numeric\"  style=''>SAT<br>FAT</th>
+      <th class=\"table-sortable:numeric\"  style=''>TRANS<br>FAT</th>
+      <th class=\"table-sortable:numeric\"  style=''>CHOLES-<br>TEROL</th>
+      <th class=\"table-sortable:numeric\"  style=''>SODIUM</th>
+      <th class=\"table-sortable:numeric\"  style=''>NET<br>CARBS</th>
+      <th class=\"table-sortable:numeric\"  style=''>TOTAL<br>CARBS</th>
+      <th class=\"table-sortable:numeric\"  style=''>DIETARY<br>FIBER</th>
+      <th class=\"table-sortable:numeric\"  style=''>SUGARS</th>
       </tr>
       </thead>
       <tbody>
