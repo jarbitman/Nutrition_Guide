@@ -14,8 +14,9 @@ foreach ($groups as $key => $value) {
   <table id=\"nut-".$key."\" class=\"table-autosort:2 table-stripeclass:alternate table-autostripe full_width\" style='width:100%;'>
     <thead>
       <tr>
-      <th class=\"\"  style='background-color:#0e2244;color:#FFFFFF;'></th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;padding:3px;'>CALS</th>
+      <th class=\"\"  style='background-color:#0e2244;color:#FFFFFF;padding:3px;'></th>
+      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>PROTEIN</th>
+      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>CALS</th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TOTAL<br>FAT</th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>SAT<br>FAT</th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TRANS<br>FAT</th>
@@ -25,7 +26,6 @@ foreach ($groups as $key => $value) {
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TOTAL<br>CARBS</th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>DIETARY<br>FIBER</th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>SUGARS</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>PROTEIN</th>
       </tr>
       </thead>
       <tbody>
@@ -40,6 +40,7 @@ foreach ($groups as $key => $value) {
         echo "
           <tr>
           <td style='padding-top:5px;'>".stripslashes($row->itemName)."</td>
+          <td>".stripslashes($info->PR)."</td>
           <td>".stripslashes($info->Cal)."</td>
           <td>".stripslashes($info->TF)."</td>
           <td>".stripslashes($info->SF)."</td>
@@ -50,7 +51,6 @@ foreach ($groups as $key => $value) {
           <td>".stripslashes($info->TC)."</td>
           <td>".stripslashes($info->DF)."</td>
           <td>".stripslashes($info->SG)."</td>
-          <td>".stripslashes($info->PR)."</td>
           </tr>
         ";
       }
