@@ -38,8 +38,8 @@ foreach ($groups as $key => $value) {
       while($row=$result->fetch_object()){
         $info=json_decode($row->itemInfo);
         echo "
-          <tr style='padding-top:5px;'>
-          <td>".stripslashes($row->itemName)."</td>
+          <tr>
+          <td style='padding-top:5px;'>".stripslashes($row->itemName)."</td>
           <td>".stripslashes($info->Cal)."</td>
           <td>".stripslashes($info->TF)."</td>
           <td>".stripslashes($info->SF)."</td>
