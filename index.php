@@ -8,7 +8,7 @@ $groups[5]="SALADS/WRAPS";
 $groups[6]="KIDS MENU";
 
 echo " <div id=\"accordion\">";
-foreach ($variable as $key => $value) {
+foreach ($groups as $key => $value) {
   echo "  <h3 style='background-color:#b2d235;color:#FFFFFF;'>$value</h3>
   <div>
   <table class=\"table-autosort:2 table-stripeclass:alternate table-autostripe full_width\">
@@ -27,7 +27,7 @@ foreach ($variable as $key => $value) {
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>SUGARS</th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>PROTEIN</th>
       </tr>
-      
+
   </div>";
 }
 echo "</div>";
