@@ -16,14 +16,14 @@ foreach ($groups as $key => $value) {
       <tr>
       <th class=\"\"  style='background-color:#0e2244;color:#FFFFFF;'></th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;padding:3px;'>CALORIES</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TOTAL FAT</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>SAT FAT</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TRANS FAT</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>CHOLESTEROL</th>
+      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TOTAL<br>FAT</th>
+      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>SAT<br>FAT</th>
+      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TRANS<br>FAT</th>
+      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>CHOLES-<br>TEROL</th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>SODIUM</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>NET CARBS</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TOTAL CARBS</th>
-      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>DIETARY FIBER</th>
+      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>NET<br>CARBS</th>
+      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>TOTAL<br>CARBS</th>
+      <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>DIETARY<br>FIBER</th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>SUGARS</th>
       <th class=\"table-sortable:numeric\"  style='background-color:#0e2244;color:#FFFFFF;'>PROTEIN</th>
       </tr>
@@ -38,7 +38,7 @@ foreach ($groups as $key => $value) {
       while($row=$result->fetch_object()){
         $info=json_decode($row->itemInfo);
         echo "
-          <tr>
+          <tr style='padding-top:5px;'>
           <td>".stripslashes($row->itemName)."</td>
           <td>".stripslashes($info->Cal)."</td>
           <td>".stripslashes($info->TF)."</td>
