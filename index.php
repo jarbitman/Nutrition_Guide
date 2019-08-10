@@ -94,11 +94,12 @@ echo "</div>";
 
 	<div class="bar1"></div>
 	<div class="line m" tabindex="0"><strong>Amount Per Serving</strong></div>
-	<div class="line">
-		<div class="fr" tabindex="0">
-		<div class="" tabindex="0">
-      <strong>Calories</strong> <span itemprop="calories">{{Cal}}</span></div>
-	</div>
+  <div class="line">
+  		<div class="fr" tabindex="0">
+  </div>
+  		<div class="" tabindex="0">
+  <strong>Calories</strong> <span itemprop="calories">{{Cal}}</span></div>
+  	</div>
 	<div class="bar2"></div>
 	<div class="line ar "><strong>% Daily Value<sup>*</sup></strong></div>
 	<div class="line" tabindex="0">
