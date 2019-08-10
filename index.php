@@ -56,7 +56,7 @@ foreach ($groups as $key => $value) {
         $info=json_decode($row->itemInfo);
         echo "
           <tr>
-          <td style='padding-top:5px;'><div  class='itemName' id='".strtolower(preg_replace("/[^a-z]/i", "", stripslashes($row->itemName)))."' data-options='".$row->itemInfo."'>".stripslashes($row->itemName)."</div></td>
+          <td style='padding-top:5px;'><div  class='itemName' id='".strtolower(preg_replace("/[^a-z]/i", "", stripslashes($row->itemName)))."' data-title='".stripslashes($row->itemName)."' data-options='".$row->itemInfo."'>".stripslashes($row->itemName)."</div></td>
           ";
           if(!isset($_GET['app']) || $_GET['app']!="true"){
       echo    "
