@@ -87,10 +87,10 @@ echo "</div>";
 	<div class="serving" tabindex="0">
 		<div class="cf">
 			<div class="servingSizeText fl">Serving Size:</div>
-			<div class="rel servingSizeField fl">1</div><!-- closing class="setter" -->
-		</div><!-- closing class="cf" -->
+			<div class="rel servingSizeField fl">1</div>
+		</div>
 
-	</div><!-- closing class="serving" -->
+	</div>
 
 	<div class="bar1"></div>
 	<div class="line m" tabindex="0"><strong>Amount Per Serving</strong></div>
@@ -137,12 +137,11 @@ echo "</div>";
 	<div class="dvCalorieDiet line">
 		<div class="calorieNote">
 			<span tabindex="0"><span class="star" aria-hidden="true">*</span> Percent Daily Values are based on a 2000 calorie diet.</span>
-		</div><!-- closing class="calorieNote" -->
+		</div>
 
-	</div><!-- closing class="dvCalorieDiet line" -->
+	</div>
 
-<div class="naTooltip">Data not available</div>
-</div><!-- closing class="nutritionLabel" -->
+</div>
 </div>
 </div>
 </div>
