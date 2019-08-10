@@ -27,7 +27,7 @@ foreach ($groups as $key => $value) {
       <tr style='background-color:#0e2244;'>
       <th class=\"\"  style='padding:3px;'></th>
       ";
-      if(isset($_GET['app']) && $_GET['app']=="true"){
+      if(!isset($_GET['app']) || $_GET['app']!="true"){
   echo    "
       <th class=\"table-sortable:numeric\"  style=''>PROTEIN</th>
       <th class=\"table-sortable:numeric\"  style=''>CALS</th>
@@ -58,7 +58,7 @@ foreach ($groups as $key => $value) {
           <tr>
           <td style='padding-top:5px;'><div  class='itemName' id='".strtolower(preg_replace("/[^a-z]/i", "", stripslashes($row->itemName)))."' data-options='".$row->itemInfo."'>".stripslashes($row->itemName)."</div></td>
           ";
-          if(isset($_GET['app']) && $_GET['app']=="true"){
+          if(!isset($_GET['app']) || $_GET['app']!="true"){
       echo    "
           <td>".stripslashes($info->PR)."</td>
           <td>".stripslashes($info->Cal)."</td>
