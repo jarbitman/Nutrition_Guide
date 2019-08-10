@@ -48,7 +48,7 @@ foreach ($groups as $key => $value) {
         $info=json_decode($row->itemInfo);
         echo "
           <tr>
-          <td style='padding-top:5px;'>".stripslashes($row->itemName)."</td>
+          <td style='padding-top:5px;'><div  class='itemName' id='".strtolower(preg_replace("/[^a-z]/i", "", stripslashes($row->itemName)))."' data-options='".$row->itemInfo."'>".stripslashes($row->itemName)."</div></td>
           <td>".stripslashes($info->PR)."</td>
           <td>".stripslashes($info->Cal)."</td>
           <td>".stripslashes($info->TF)."</td>
