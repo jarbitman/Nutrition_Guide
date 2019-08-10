@@ -1,9 +1,10 @@
-$(".itemName").on("click", function(e) {
-  var itemOptions = $("#" + e.target.id).data("options");
-  var nutritionLabel = $("#modalNutritionLabel").html();
+var itemOptions;
 
-  console.log(nutritionLabel);
-  nutritionLabel = nutritionLabel.replace(/\{\{[a-z0-9]+\}\}/gi, function(_, field) {
+$(".itemName").on("click", function(e) {
+  itemOptions = $("#" + e.target.id).data("options");
+  var nutritionLabel = $("#modalNutritionLabelParent").html();
+
+  nutritionLabel = nutritionLabel.replace(/\{\{[a-z]+\}\}/gi, function(_, field) {
     console.log(`field: ${field}, value ${itemOptions[field]}`);
     if (itemOptions[field]) {
       return itemOptions[field];
@@ -11,6 +12,7 @@ $(".itemName").on("click", function(e) {
       return '';
     }
   });
+  console.log(nutritionLabel);
   $( "#nutrition-dialog").html(nutritionLabel);
   $( "#nutrition-dialog").dialog({
     modal: true,

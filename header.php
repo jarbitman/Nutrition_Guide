@@ -1,3 +1,4 @@
+<!doctype html>
 <html class="no-js" lang="en-US">
     <head>
 	<meta charset="utf-8">
@@ -29,13 +30,6 @@
 		</script>
 
 	<link rel="stylesheet" href="//assets-cdn-refresh.getbento.com/stylesheet/theproteinbar/scss/main.6a1635f8cad77f1901297b3217c1b36b.scss" />
-	    <script type="text/javascript">
-	        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	        ga("create", "UA-114656647-28", "auto");
-	        ga("require", "autotrack");
-	        ga("send", "pageview");
-	    </script>
-	    <script type="text/javascript" src="https://www.google-analytics.com/analytics.js" async></script>
 	<script type="text/javascript">
 	    Modernizr.addTest("maybemobile", function(){ return (Modernizr.touchevents && Modernizr.mq("only screen and (max-width: 768px)")) ? true : false; });
 	</script>
