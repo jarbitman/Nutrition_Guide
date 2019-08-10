@@ -12,6 +12,7 @@ echo "
 th {
   background-color:#0e2244;
   color:#FFFFFF;
+  transform: rotate(-90deg);
 }
 tr.alternate{
   background-color:#ccf
@@ -23,7 +24,7 @@ foreach ($groups as $key => $value) {
   <div>
   <table id=\"nut-".$key."\" class=\"table-autosort:2 table-stripeclass:alternate table-autostripe full_width\" style='width:100%;'>
     <thead>
-      <tr>
+      <tr style='background-color:#0e2244;'>
       <th class=\"\"  style='padding:3px;'></th>
       <th class=\"table-sortable:numeric\"  style=''>PROTEIN</th>
       <th class=\"table-sortable:numeric\"  style=''>CALS</th>
