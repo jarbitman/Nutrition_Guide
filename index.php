@@ -17,7 +17,7 @@ tr.alternate{
   background-color:#ccf
 }
 </style>
-<h2>Click on an item's name to view the nutrition label</h2>
+<h4>Click on an item's name to view the nutrition label</h4>
 <div id=\"accordion\">";
 foreach ($groups as $key => $value) {
   echo "  <h3 style='background-color:#b2d235;color:#FFFFFF;'>$value</h3>
