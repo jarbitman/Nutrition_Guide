@@ -1,5 +1,3 @@
-var itemOptions;
-
 $(".itemName").on("click", function(e) {
   itemOptions = $("#" + e.target.id).data("options");
   var nutritionLabel = $("#modalNutritionLabelParent").html();
@@ -7,15 +5,16 @@ $(".itemName").on("click", function(e) {
   itemOptions.calories = itemOptions.Cal;
   itemOptions.totalfat = itemOptions.TF;
 
-  nutritionLabel = nutritionLabel.replace(/\{\{[a-z]+\}\}/gi, function(_, field) {
-    console.log(`field: ${field}, value ${itemOptions[field]}`);
+  nutritionLabel = nutritionLabel.replace(/\{\{([a-z]+)\}\}/gi, function(_, field) {
+    console.log(itemOptions);
+    console.log(`_: ${_}, field: ${field}, value ${itemOptions[field]}`);
     if (itemOptions[field]) {
       return itemOptions[field];
     } else {
       return '';
     }
   });
-  console.log(nutritionLabel);
+
   $( "#nutrition-dialog").html(nutritionLabel);
   $( "#nutrition-dialog").dialog({
     modal: true,
