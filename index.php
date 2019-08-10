@@ -10,9 +10,7 @@ $groups[6]="KIDS MENU";
 echo "
 <style>
 th {
-  background-color:#0e2244;
   color:#FFFFFF;
-  transform: rotate(-90deg);
 }
 tr.alternate{
   background-color:#ccf
