@@ -11,6 +11,7 @@ echo "
 <style>
 th {
   color:#FFFFFF;
+
 }
 tr.alternate{
   background-color:#ccf
@@ -70,5 +71,79 @@ echo   "
   </div>";
 }
 echo "</div>";
+
+?>
+<div id="modalNutritionLabel" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 49px; height: auto;" scrolltop="0" scrollleft="0">
+
+<div class="labelWrap fl" style="width: 280px;">
+
+	<input type="hidden" id="valueName" value="{{itemName}}">
+
+	<div id="nutritionLabel"><div itemscope="" itemtype="http://schema.org/NutritionInformation" class="nutritionLabel" style=" width: 260px;">
+	<div class="title" tabindex="0">Nutrition Facts</div>
+	<div class="serving" tabindex="0">
+		<div class="cf">
+			<div class="servingSizeText fl">Serving Size:</div>
+			<div class="rel servingSizeField fl">1</div><!-- closing class="setter" -->
+		</div><!-- closing class="cf" -->
+
+	</div><!-- closing class="serving" -->
+
+	<div class="bar1"></div>
+	<div class="line m" tabindex="0"><strong>Amount Per Serving</strong></div>
+	<div class="line">
+		<div class="fr" tabindex="0">
+		<div class="" tabindex="0">
+      <strong>Calories</strong> <span itemprop="calories">{{calories}}</span></div>
+	</div>
+	<div class="bar2"></div>
+	<div class="line ar "><strong>% Daily Value<sup>*</sup></strong></div>
+	<div class="line" tabindex="0">
+		<div class="dv" aria-hidden="true"><strong>{{totalfatperc}}</strong>%</div>
+		<strong>Total Fat</strong> <span itemprop="fatContent">{{totalfat}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span>
+	</span></div>
+	<div class="line indent" tabindex="0">
+		<div class="dv" aria-hidden="true"><strong>{{satfatperc}}</strong>%</div>
+		Saturated Fat <span itemprop="saturatedFatContent">{{satfat}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span>
+	</span></div>
+	<div class="line indent" tabindex="0">
+		<em>Trans</em> Fat <span itemprop="transFatContent">{{tranfat}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span>
+	</span></div>
+	<div class="line" tabindex="0">
+		<div class="dv" aria-hidden="true"><strong>{{cholesterolperc}}</strong>%</div>
+		<strong>Cholesterol</strong> <span itemprop="cholesterolContent">{{cholesterol}}<span aria-hidden="true">mg</span><span class="sr-only"> milligrams</span>
+	</span></div>
+	<div class="line" tabindex="0">
+		<div class="dv" aria-hidden="true"><strong>{{sodiumperc}}</strong>%</div>
+		<strong>Sodium</strong> <span itemprop="sodiumContent">{{sodium}}<span aria-hidden="true">mg</span><span class="sr-only"> milligrams</span>
+	</span></div>
+	<div class="line" tabindex="0">
+		<div class="dv" aria-hidden="true"><strong>{{carbsperc}}</strong>%</div>
+		<strong>Total Carbohydrates</strong> <span itemprop="carbohydrateContent">{{carbs}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span>
+	</span></div>
+	<div class="line indent" tabindex="0">
+		<div class="dv" aria-hidden="true"><strong>{{fiberperc}}</strong>%</div>
+		Dietary Fiber <span itemprop="fiberContent">{{fiber}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span>
+	</span></div>
+	<div class="line indent" tabindex="0">
+		Sugars <span itemprop="sugarContent">{{sugar}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span>
+	</span></div>
+	<div class="line" tabindex="0">
+<strong>Protein</strong> <span itemprop="proteinContent">{{protein}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span></span></div>
+	<div class="bar1"></div>
+	<div class="dvCalorieDiet line">
+		<div class="calorieNote">
+			<span tabindex="0"><span class="star" aria-hidden="true">*</span> Percent Daily Values are based on a 2000 calorie diet.</span>
+		</div><!-- closing class="calorieNote" -->
+
+	</div><!-- closing class="dvCalorieDiet line" -->
+
+<div class="naTooltip">Data not available</div>
+</div><!-- closing class="nutritionLabel" -->
+</div>
+</div>
+
+</div>
+<?php
 
 include("footer.php");
