@@ -73,6 +73,8 @@ echo   "
 echo "</div>";
 
 ?>
+<div id="nutrition-dialog">
+</div>
 <div id="modalNutritionLabel" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 49px; height: auto;" scrolltop="0" scrollleft="0">
 
 <div class="labelWrap fl" style="width: 280px;">
