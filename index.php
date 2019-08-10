@@ -17,6 +17,7 @@ tr.alternate{
   background-color:#ccf
 }
 </style>
+<h2>Click on an item's name to view the nutrition label</h2>
 <div id=\"accordion\">";
 foreach ($groups as $key => $value) {
   echo "  <h3 style='background-color:#b2d235;color:#FFFFFF;'>$value</h3>
@@ -25,6 +26,9 @@ foreach ($groups as $key => $value) {
     <thead>
       <tr style='background-color:#0e2244;'>
       <th class=\"\"  style='padding:3px;'></th>
+      ";
+      if(isset($_GET['app']) && $_GET['app']=="true"){
+  echo    "
       <th class=\"table-sortable:numeric\"  style=''>PROTEIN</th>
       <th class=\"table-sortable:numeric\"  style=''>CALS</th>
       <th class=\"table-sortable:numeric\"  style=''>TOTAL<br>FAT</th>
@@ -36,6 +40,9 @@ foreach ($groups as $key => $value) {
       <th class=\"table-sortable:numeric\"  style=''>TOTAL<br>CARBS</th>
       <th class=\"table-sortable:numeric\"  style=''>DIETARY<br>FIBER</th>
       <th class=\"table-sortable:numeric\"  style=''>SUGARS</th>
+      ";
+    }
+    echo    "
       </tr>
       </thead>
       <tbody>
@@ -50,6 +57,9 @@ foreach ($groups as $key => $value) {
         echo "
           <tr>
           <td style='padding-top:5px;'><div  class='itemName' id='".strtolower(preg_replace("/[^a-z]/i", "", stripslashes($row->itemName)))."' data-options='".$row->itemInfo."'>".stripslashes($row->itemName)."</div></td>
+          ";
+          if(isset($_GET['app']) && $_GET['app']=="true"){
+      echo    "
           <td>".stripslashes($info->PR)."</td>
           <td>".stripslashes($info->Cal)."</td>
           <td>".stripslashes($info->TF)."</td>
@@ -61,6 +71,9 @@ foreach ($groups as $key => $value) {
           <td>".stripslashes($info->TC)."</td>
           <td>".stripslashes($info->DF)."</td>
           <td>".stripslashes($info->SG)."</td>
+          ";
+        }
+        echo    "
           </tr>
         ";
       }
@@ -82,7 +95,7 @@ echo "</div>";
 
 	<input type="hidden" id="valueName" value="{{itemName}}">
 
-	<div id="nutritionLabel"><div itemscope="" itemtype="http://schema.org/NutritionInformation" class="nutritionLabel" style=" width: 260px;">
+	<div id="nutritionLabel"><div itemscope="" itemtype="http://schema.org/NutritionInformation" class="nutritionLabel" style=" width: 310px;">
 	<div class="title" tabindex="0">Nutrition Facts</div>
 	<div class="serving" tabindex="0">
 		<div class="cf">

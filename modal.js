@@ -21,6 +21,7 @@ $(".itemName").on("click", function(e) {
   $( "#nutrition-dialog").html(nutritionLabel);
   $( "#nutrition-dialog").dialog({
     modal: true,
+    width: 375,
     buttons: {
       Ok: function() {
         $( this ).dialog( "close" );
