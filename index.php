@@ -75,10 +75,10 @@ echo "</div>";
 ?>
 <div id="nutrition-dialog">
 </div>
-<div id="modalNutritionLabelParent">
+<div id="modalNutritionLabelParent" style="display:none;">
 <div id="modalNutritionLabel" class="ui-dialog-content ui-widget-content" style="width:auto;min-height:49px;height:auto;" scrolltop="0" scrollleft="0">
 
-<div class="labelWrap fl" style="width: 280px;">
+<div class="labelWrap fl" style="width: 300px;">
 
 	<input type="hidden" id="valueName" value="{{itemName}}">
 
