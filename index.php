@@ -16,6 +16,22 @@ th {
 tr.alternate{
   background-color:#ccf
 }
+@media all and (max-width: 767px) {
+  td.mobileShowHide{
+    display:none;
+    width:0;
+    height:0;
+    opacity:0;
+    visibility: collapse;
+  }
+  th.mobileShowHide{
+    display:none;
+    width:0;
+    height:0;
+    opacity:0;
+    visibility: collapse;
+  }
+}
 </style>
 <h4>Click on an item's name to view the nutrition label</h4>
 <div id=\"accordion\">";
@@ -29,17 +45,17 @@ foreach ($groups as $key => $value) {
       ";
       if(!isset($_GET['app']) || $_GET['app']!="true"){
   echo    "
-      <th class=\"table-sortable:numeric\"  style=''>PROTEIN</th>
-      <th class=\"table-sortable:numeric\"  style=''>CALS</th>
-      <th class=\"table-sortable:numeric\"  style=''>TOTAL<br>FAT</th>
-      <th class=\"table-sortable:numeric\"  style=''>SAT<br>FAT</th>
-      <th class=\"table-sortable:numeric\"  style=''>TRANS<br>FAT</th>
-      <th class=\"table-sortable:numeric\"  style=''>CHOLES-<br>TEROL</th>
-      <th class=\"table-sortable:numeric\"  style=''>SODIUM</th>
-      <th class=\"table-sortable:numeric\"  style=''>NET<br>CARBS</th>
-      <th class=\"table-sortable:numeric\"  style=''>TOTAL<br>CARBS</th>
-      <th class=\"table-sortable:numeric\"  style=''>DIETARY<br>FIBER</th>
-      <th class=\"table-sortable:numeric\"  style=''>SUGARS</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>PROTEIN</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>CALS</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TOTAL<br>FAT</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>SAT<br>FAT</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TRANS<br>FAT</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>CHOLES-<br>TEROL</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>SODIUM</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>NET<br>CARBS</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TOTAL<br>CARBS</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>DIETARY<br>FIBER</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>SUGARS</th>
       ";
     }
     echo    "
@@ -61,16 +77,16 @@ foreach ($groups as $key => $value) {
           if(!isset($_GET['app']) || $_GET['app']!="true"){
       echo    "
           <td>".stripslashes($info->PR)."</td>
-          <td>".stripslashes($info->Cal)."</td>
-          <td>".stripslashes($info->TF)."</td>
-          <td>".stripslashes($info->SF)."</td>
-          <td>".stripslashes($info->TRF)."</td>
-          <td>".stripslashes($info->CHO)."</td>
-          <td>".stripslashes($info->SOD)."</td>
-          <td>".stripslashes($info->NC)."</td>
-          <td>".stripslashes($info->TC)."</td>
-          <td>".stripslashes($info->DF)."</td>
-          <td>".stripslashes($info->SG)."</td>
+          <td class=\"mobileShowHide\">".stripslashes($info->Cal)."</td>
+          <td class=\"mobileShowHide\">".stripslashes($info->TF)."</td>
+          <td class=\"mobileShowHide\">".stripslashes($info->SF)."</td>
+          <td class=\"mobileShowHide\">".stripslashes($info->TRF)."</td>
+          <td class=\"mobileShowHide\">".stripslashes($info->CHO)."</td>
+          <td class=\"mobileShowHide\">".stripslashes($info->SOD)."</td>
+          <td class=\"mobileShowHide\">".stripslashes($info->NC)."</td>
+          <td class=\"mobileShowHide\">".stripslashes($info->TC)."</td>
+          <td class=\"mobileShowHide\">".stripslashes($info->DF)."</td>
+          <td class=\"mobileShowHide\">".stripslashes($info->SG)."</td>
           ";
         }
         echo    "
