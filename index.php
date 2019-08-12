@@ -76,7 +76,7 @@ foreach ($groups as $key => $value) {
           ";
           if(!isset($_GET['app']) || $_GET['app']!="true"){
       echo    "
-          <td>".stripslashes($info->PR)."</td>
+          <td class=\"mobileShowHide\">".stripslashes($info->PR)."</td>
           <td class=\"mobileShowHide\">".stripslashes($info->Cal)."</td>
           <td class=\"mobileShowHide\">".stripslashes($info->TF)."</td>
           <td class=\"mobileShowHide\">".stripslashes($info->SF)."</td>
