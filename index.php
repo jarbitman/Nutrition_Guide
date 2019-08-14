@@ -7,6 +7,14 @@ $groups[3]="BOWLS/BAR-RITOS";
 $groups[4]="CHILIS/SOUPS";
 $groups[5]="SALADS/WRAPS";
 $groups[6]="KIDS MENU";
+$q="SELECT itemName,itemInfo,itemSection FROM pbc_public_nutritional WHERE published=1 ORDER BY itemName";
+$stmt = $mysqli->stmt_init();
+$stmt->prepare($q);
+$stmt->execute();
+$result = $stmt->get_result();
+while($row=$result->fetch_object()){
+  $items=[$row->itemSection][]=array("itemName"=>$row->itemName,"itemInfo"=>$row->itemInfo);
+}
 echo "
 <style>
 th {
@@ -35,10 +43,10 @@ tr.alternate{
 </style>
 <h4>Click on an item's name to view the nutrition label</h4>
 <div id=\"accordion\">";
-foreach ($groups as $key => $value) {
-  echo "  <h3 style='background-color:#b2d235;color:#FFFFFF;'>$value</h3>
+foreach ($items as $key => $value) {
+  echo "  <h3 style='background-color:#b2d235;color:#FFFFFF;'>".$groups[$key]."</h3>
   <div>
-  <table id=\"nut-".$key."\" class=\"table-autosort:2 table-stripeclass:alternate table-autostripe full_width\" style='width:100%;'>
+  <table id=\"nut-".$key."\" class=\"table-stripeclass:alternate table-autostripe full_width\" style='width:100%;'>
     <thead>
       <tr style='background-color:#0e2244;'>
       <th class=\"\"  style='padding:3px;'></th>
@@ -63,16 +71,11 @@ foreach ($groups as $key => $value) {
       </thead>
       <tbody>
       ";
-      $q="SELECT itemName,itemInfo FROM pbc_public_nutritional WHERE published=1 and itemSection='".$key."'";
-      $stmt = $mysqli->stmt_init();
-      $stmt->prepare($q);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      while($row=$result->fetch_object()){
-        $info=json_decode($row->itemInfo);
+      foreach($value as $item){
+        $info=json_decode($item['itemInfo']);
         echo "
           <tr>
-          <td style='padding-top:5px;'><div  class='itemName' id='".strtolower(preg_replace("/[^a-z]/i", "", stripslashes($row->itemName)))."' data-title='".stripslashes($row->itemName)."' data-options='".$row->itemInfo."'>".stripslashes($row->itemName)."</div></td>
+          <td style='padding-top:5px;'><div  class='itemName' id='".strtolower(preg_replace("/[^a-z]/i", "", stripslashes($item['itemName'])))."' data-title='".stripslashes($item['itemName'])."' data-options='".$item['itemInfo']."'>".stripslashes($item['itemName'])."</div></td>
           ";
           if(!isset($_GET['app']) || $_GET['app']!="true"){
       echo    "
