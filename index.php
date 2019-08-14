@@ -1,6 +1,7 @@
 <?php
 $mysqli = new mysqli("10.80.0.3", "pbconnect", 'KS4DV42pYJ2eNSYB', "pbc2");
 include("header.php");
+$items=array();
 $groups[1]="BREAKFAST / COFFEE";
 $groups[2]="SHAKES";
 $groups[3]="BOWLS/BAR-RITOS";
