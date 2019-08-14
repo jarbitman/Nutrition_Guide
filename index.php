@@ -14,7 +14,7 @@ $stmt->prepare($q);
 $stmt->execute();
 $result = $stmt->get_result();
 while($row=$result->fetch_object()){
-  $items=[$row->itemSection][]=array("itemName"=>$row->itemName,"itemInfo"=>$row->itemInfo);
+  $items[$row->itemSection][]=array("itemName"=>$row->itemName,"itemInfo"=>$row->itemInfo);
 }
 echo "
 <style>
