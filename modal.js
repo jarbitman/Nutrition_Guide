@@ -2,7 +2,7 @@ $(".itemName").on("click", function(e) {
   itemOptions = $("#" + e.target.id).data("options");
   var nutritionLabel = $("#modalNutritionLabelParent").html();
   var dailyValues = {"fat": 65, "saturatedFat": 20, "cholesterol": 300, "sodium": 2400, "carbohydrates": 300, "fiber": 25};
-/*
+
   itemOptions.totalfatperc = "" + Math.round(parseInt(itemOptions.TF.replace(/[^0-9]/g), '')/dailyValues.fat * 100);
   itemOptions.satfatperc = "" + Math.round(parseInt(itemOptions.SF.replace(/[^0-9]/g), '')/dailyValues.saturatedFat * 100);
   itemOptions.cholesterolperc = "" + Math.round(parseInt(itemOptions.CHO.replace(/[^0-9]/g), '')/dailyValues.cholesterol * 100);
@@ -17,7 +17,7 @@ $(".itemName").on("click", function(e) {
       return '';
     }
   });
-*/
+
   $( "#nutrition-dialog").html(nutritionLabel);
   $( "#nutrition-dialog").dialog({
     modal: true,
