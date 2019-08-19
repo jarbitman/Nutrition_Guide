@@ -27,5 +27,5 @@ $(".itemName").on("click", function(e) {
         $( this ).dialog( "close" );
       }
     }
-  });
+  }).prev(".ui-dialog-titlebar").css("white-space","wrap");;
 });
