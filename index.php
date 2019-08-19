@@ -150,7 +150,7 @@ echo "</div>";
       <span class="nutrition-item-label">Sugars</span> <span class="nutrition-item" >{{SG}}g</span>
     </p>
   </div>
-  <hr style=\"border: 1px solid #B2D235;\">
+  <hr style=\"border: 2px solid #B2D235;\">
   <div>
     <p>
        <span class="nutrition-item" >Allergens</span>
