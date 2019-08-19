@@ -138,17 +138,17 @@ echo "</div>";
 
 	<input type="hidden" id="valueName" value="{{itemName}}">
   <div>
-      <div class="nutrition-item-label">Calories</span> <span class="nutrition-item" >{{Cal}}</div><br>
-      <div class="nutrition-item-label" style="text-indent: 15px;">Total Fat</span> <span class="nutrition-item" >{{TF}}g</div><br>
-      <div class="nutrition-item-label" style="text-indent: 15px;">Saturated Fat</span> <span class="nutrition-item" >{{SF}}g</div><br>
-      <div class="nutrition-item-label" style="text-indent: 15px;">Trans Fat</span> <span class="nutrition-item" >{{TRF}}g</div><br>
-      <div class="nutrition-item-label">Cholesterol</span> <span class="nutrition-item" >{{CHO}}mg</div><br>
-      <div class="nutrition-item-label">Sodium</span> <span class="nutrition-item" >{{SOD}}mg</div><br>
-      <div class="nutrition-item-label">Net Carbs</span> <span class="nutrition-item" >{{NC}}g</div><br>
-      <div class="nutrition-item-label">Total Carbs</span> <span class="nutrition-item" >{{TC}}g</div><br>
-      <div class="nutrition-item-label" style="text-indent: 15px;">Dietary Fiber</span> <span class="nutrition-item" >{{DF}}g</div><br>
-      <div class="nutrition-item-label" style="text-indent: 15px;">Sugars</span> <span class="nutrition-item" >{{SG}}g</div><br>
-      <div class="nutrition-item-label">Protein</span> <span class="nutrition-item" >{{PR}}g</div>
+      <div><span class="nutrition-item-label">Calories</span> <span class="nutrition-item" >{{Cal}}</span></div>
+      <div style="text-indent: 15px;"><span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}g</span></div>
+      <div style="text-indent: 15px;"><span class="nutrition-item-label">Saturated Fat</span> <span class="nutrition-item" >{{SF}}g</span></div>
+      <div style="text-indent: 15px;"><span class="nutrition-item-label">Trans Fat</span> <span class="nutrition-item" >{{TRF}}g</span></div>
+      <div><span class="nutrition-item-label">Cholesterol</span> <span class="nutrition-item" >{{CHO}}mg</span></div>
+      <div><span class="nutrition-item-label">Sodium</span> <span class="nutrition-item" >{{SOD}}mg</span></div>
+      <div><span class="nutrition-item-label">Net Carbs</span> <span class="nutrition-item" >{{NC}}g</span></div>
+      <div><span class="nutrition-item-label">Total Carbs</span> <span class="nutrition-item" >{{TC}}g</span></div>
+      <div style="text-indent: 15px;"><span class="nutrition-item-label">Dietary Fiber</span> <span class="nutrition-item" >{{DF}}g</span></div>
+      <div style="text-indent: 15px;"><span class="nutrition-item-label">Sugars</span> <span class="nutrition-item" >{{SG}}g</span></div>
+      <div><span class="nutrition-item-label">Protein</span> <span class="nutrition-item" >{{PR}}g</span></div>
   </div>
   <hr style=\"border: 2px solid #B2D235;\">
   <div>
