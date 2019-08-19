@@ -22,7 +22,7 @@ $(".itemName").on("click", function(e) {
   $( "#nutrition-dialog").dialog({
     modal: true,
     width: 375,
-    title: $("#" + e.target.id).data("title"),
+    title: $("#" + e.target.id).decodeURIComponent(data("title")),
     buttons: {
       Ok: function() {
         $( this ).dialog( "close" );
