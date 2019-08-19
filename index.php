@@ -26,7 +26,7 @@ tr.alternate{
   background-color:#ccf
 }
 .ui-widget-header{
-  backgound-color:#F36C21;
+  background-color:#F36C21;
   color:#FFFFFF;
 }
 @media all and (max-width: 767px) {
