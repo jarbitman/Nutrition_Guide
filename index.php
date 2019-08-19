@@ -27,8 +27,23 @@ tr.alternate{
 }
 .ui-widget-header{
   font-family:\"Gotham Black\";font-weight:500;
+  text-transform: uppercase;
+
   background-color:#F36C21;
   color:#FFFFFF;
+}
+.nutrition-item-label{
+  font-family:\"Gotham Black\";
+  color:#B2D235;
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+.nutrition-item{
+  font-family:\"Lora\";
+  font-size:1rem;
+  line-height:1.5;
+  color:#444;
 }
 @media all and (max-width: 767px) {
   td.mobileShowHide{
@@ -121,7 +136,24 @@ echo "</div>";
 <div class="labelWrap fl" style="width: 300px;">
 
 	<input type="hidden" id="valueName" value="{{itemName}}">
-
+  <div>
+    <p>
+      <span class="nutrition-item-label">Calories</span> <span class="nutrition-item" >{{Cal}}</span>
+    </p>
+    <p>
+      <span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}</span>
+    </p>
+  </div>
+  <hr style=\"color:#B2D235;\">
+  <div>
+    <p>
+       <span class="nutrition-item" >Allergens</span>
+    </p>
+    <p>
+       <span class="nutrition-item" >Dietary Preferences</span>
+    </p>
+  </div>
+  <!--
 	<div id="nutritionLabel"><div itemscope="" itemtype="http://schema.org/NutritionInformation" class="nutritionLabel" style=" width: 310px;">
 
 	<div class="bar1"></div>
@@ -176,6 +208,7 @@ echo "</div>";
 
 </div>
 </div>
+-->
 </div>
 </div>
 </div>
