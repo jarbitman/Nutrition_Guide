@@ -26,7 +26,7 @@ tr.alternate{
   background-color:#ccf
 }
 .ui-widget-header{
-  font-family:\"Trade Gothic Bold Condensed Oblique\";font-weight:500;
+  font-family:\"Trade Gothic Bold\";font-weight:500;
   text-transform: uppercase;
   overflow-wrap: normal;
   background-color:#F36C21;
