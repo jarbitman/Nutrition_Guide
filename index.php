@@ -26,7 +26,7 @@ tr.alternate{
   background-color:#ccf
 }
 .ui-widget-header{
-  font-family:\"Trade Gothic Bold\";font-weight:500;
+  font-family:\"Trade Gothic Bold\";font-weight:700;
   text-transform: uppercase;
   overflow-wrap: normal;
   background-color:#F36C21;
@@ -35,7 +35,7 @@ tr.alternate{
 .nutrition-item-label{
   font-family:\"Trade Gothic Bold\";
   color:#0E2244;
-  font-weight:400;
+  font-weight:700;
   text-transform:uppercase;
   letter-spacing:2px;
 }
