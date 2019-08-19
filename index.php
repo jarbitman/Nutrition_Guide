@@ -26,9 +26,7 @@ tr.alternate{
   background-color:#ccf
 }
 .ui-widget-header{
-  font-family:\"Trade Gothic Bold Condensed\";font-weight:700;
-  src:url(\"//media-cdn.getbento.com/accounts/79416dac6744e5896d428cd16e2e574c/media/accounts/media/IpMT2xLT2KA1T9rbCaV2_Trade Gothic LT Bold Condensed No. 20.ttf\")
-
+  font-family:\"Trade Gothic Bold Condensed\";
   text-transform: uppercase;
   overflow-wrap: normal;
   background-color:#F36C21;
@@ -37,7 +35,7 @@ tr.alternate{
 .nutrition-item-label{
   font-family:\"Trade Gothic Bold Condensed\";
   color:#0E2244;
-  font-weight:700;
+  font-size:2em;
   text-transform:uppercase;
   letter-spacing:2px;
 }
@@ -99,7 +97,7 @@ foreach ($items as $key => $value) {
         $info=json_decode($item['itemInfo']);
         echo "
           <tr>
-          <td style='padding-top:5px;'><div  class='itemName' id='".strtolower(preg_replace("/[^a-z]/i", "", stripslashes($item['itemName'])))."' data-title='".stripslashes($item['itemName'])."' data-options='".$item['itemInfo']."'>".stripslashes($item['itemName'])."</div></td>
+          <td style='padding-top:5px;'><div  class='itemName' id='".strtolower(preg_replace("/[^a-z]/i", "", stripslashes($item['itemName'])))."' data-title='".stripslashes(strtoupper($item['itemName']))."' data-options='".$item['itemInfo']."'>".stripslashes($item['itemName'])."</div></td>
           ";
           if(!isset($_GET['app']) || $_GET['app']!="true"){
       echo    "
