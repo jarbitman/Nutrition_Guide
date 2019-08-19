@@ -27,16 +27,16 @@ tr.alternate{
 }
 .ui-widget-header{
   font-family:\"Trade Gothic Bold Condensed\";
-  font-size:1.5em;
+  font-size:1.75em;
   text-transform: uppercase;
-  overflow-wrap: normal;
+  overflow-wrap: break-word;
   background-color:#F36C21;
   color:#FFFFFF;
 }
 .nutrition-item-label{
   font-family:\"Trade Gothic Bold Condensed\";
   color:#0E2244;
-  font-size:1.25em;
+  font-size:1.5em;
   text-transform:uppercase;
   letter-spacing:2px;
 }
