@@ -26,7 +26,9 @@ tr.alternate{
   background-color:#ccf
 }
 .ui-widget-header{
-  font-family:\"Trade Gothic Bold\";font-weight:700;
+  font-family:\"Trade Gothic Bold Condensed\";font-weight:700;
+  src:url(\"//media-cdn.getbento.com/accounts/79416dac6744e5896d428cd16e2e574c/media/accounts/media/IpMT2xLT2KA1T9rbCaV2_Trade Gothic LT Bold Condensed No. 20.ttf\")
+
   text-transform: uppercase;
   overflow-wrap: normal;
   background-color:#F36C21;
