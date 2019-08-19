@@ -17,12 +17,11 @@ $(".itemName").on("click", function(e) {
       return '';
     }
   });
-
   $( "#nutrition-dialog").html(nutritionLabel);
   $( "#nutrition-dialog").dialog({
     modal: true,
     width: 375,
-    title: $("#" + e.target.id).decodeURIComponent(data("title")),
+    title: decodeURIComponent($("#" + e.target.id).data("title")),
     buttons: {
       Ok: function() {
         $( this ).dialog( "close" );
