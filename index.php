@@ -25,6 +25,10 @@ th {
 tr.alternate{
   background-color:#ccf
 }
+.ui-widget-header{
+  backgound-color:#F36C21;
+  color:#FFFFFF;
+}
 @media all and (max-width: 767px) {
   td.mobileShowHide{
     display:none;
@@ -65,6 +69,7 @@ foreach ($items as $key => $value) {
       <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TOTAL<br>CARBS</th>
       <th class=\"table-sortable:numeric mobileShowHide\"  style=''>DIETARY<br>FIBER</th>
       <th class=\"table-sortable:numeric mobileShowHide\"  style=''>SUGARS</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>ALLERGENS</th>
       ";
     }
     echo    "
@@ -91,6 +96,7 @@ foreach ($items as $key => $value) {
           <td class=\"mobileShowHide\">".stripslashes($info->TC)."</td>
           <td class=\"mobileShowHide\">".stripslashes($info->DF)."</td>
           <td class=\"mobileShowHide\">".stripslashes($info->SG)."</td>
+          <td class=\"mobileShowHide\"></td>
           ";
         }
         echo    "
@@ -116,14 +122,6 @@ echo "</div>";
 	<input type="hidden" id="valueName" value="{{itemName}}">
 
 	<div id="nutritionLabel"><div itemscope="" itemtype="http://schema.org/NutritionInformation" class="nutritionLabel" style=" width: 310px;">
-	<div class="title" tabindex="0">Nutrition Facts</div>
-	<div class="serving" tabindex="0">
-		<div class="cf">
-			<div class="servingSizeText fl">Serving Size:</div>
-			<div class="rel servingSizeField fl">1</div>
-		</div>
-
-	</div>
 
 	<div class="bar1"></div>
 	<div class="line m" tabindex="0"><strong>Amount Per Serving</strong></div>
