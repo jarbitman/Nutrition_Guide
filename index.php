@@ -35,7 +35,7 @@ tr.alternate{
   color:#FFFFFF;
 }
 .nutrition-item-label{
-  font-family:\"Trade Gothic Bold\";
+  font-family:\"Trade Gothic Bold Condensed\";
   color:#0E2244;
   font-weight:700;
   text-transform:uppercase;
