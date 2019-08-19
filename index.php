@@ -139,15 +139,15 @@ echo "</div>";
   <div>
     <p>
       <span class="nutrition-item-label">Calories</span> <span class="nutrition-item" >{{Cal}}</span><br>
-      <span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}</span><br>
-      <span class="nutrition-item-label">Saturated Fat</span> <span class="nutrition-item" >{{SF}}</span><br>
-      <span class="nutrition-item-label">Trans Fat</span> <span class="nutrition-item" >{{TRF}}</span><br>
-      <span class="nutrition-item-label">Cholesterol</span> <span class="nutrition-item" >{{CHO}}</span><br>
-      <span class="nutrition-item-label">Sodium</span> <span class="nutrition-item" >{{SOD}}</span><br>
-      <span class="nutrition-item-label">Net Carbs</span> <span class="nutrition-item" >{{NC}}</span><br>
-      <span class="nutrition-item-label">Total Carbs</span> <span class="nutrition-item" >{{TC}}</span><br>
-      <span class="nutrition-item-label">Dietary Fiber</span> <span class="nutrition-item" >{{DF}}</span><br>
-      <span class="nutrition-item-label">Sugars</span> <span class="nutrition-item" >{{SG}}</span>
+      <span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}g</span><br>
+      <span class="nutrition-item-label">Saturated Fat</span> <span class="nutrition-item" >{{SF}}g</span><br>
+      <span class="nutrition-item-label">Trans Fat</span> <span class="nutrition-item" >{{TRF}}g</span><br>
+      <span class="nutrition-item-label">Cholesterol</span> <span class="nutrition-item" >{{CHO}}mg</span><br>
+      <span class="nutrition-item-label">Sodium</span> <span class="nutrition-item" >{{SOD}}mg</span><br>
+      <span class="nutrition-item-label">Net Carbs</span> <span class="nutrition-item" >{{NC}}g</span><br>
+      <span class="nutrition-item-label">Total Carbs</span> <span class="nutrition-item" >{{TC}}g</span><br>
+      <span class="nutrition-item-label">Dietary Fiber</span> <span class="nutrition-item" >{{DF}}g</span><br>
+      <span class="nutrition-item-label">Sugars</span> <span class="nutrition-item" >{{SG}}g</span>
     </p>
   </div>
   <hr style=\"border: 1px solid #B2D235;\">
