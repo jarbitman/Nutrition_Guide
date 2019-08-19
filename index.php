@@ -26,14 +26,14 @@ tr.alternate{
   background-color:#ccf
 }
 .ui-widget-header{
-  font-family:\"Gotham Black\";font-weight:500;
+  font-family:\"Trade Gothic Bold Condensed Oblique\";font-weight:500;
   text-transform: uppercase;
   overflow-wrap: normal;
   background-color:#F36C21;
   color:#FFFFFF;
 }
 .nutrition-item-label{
-  font-family:\"Gotham Black\";
+  font-family:\"Trade Gothic Bold Condensed Oblique\";
   color:#0E2244;
   font-weight:400;
   text-transform:uppercase;
