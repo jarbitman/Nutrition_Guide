@@ -33,6 +33,10 @@ tr.alternate{
   background-color:#F36C21;
   color:#FFFFFF;
 }
+.ui-dialog .ui-dialog-title {
+  white-space: wrap;
+  overflow: wrap;
+}
 .nutrition-item-label{
   font-family:\"Trade Gothic Bold Condensed\";
   color:#0E2244;
