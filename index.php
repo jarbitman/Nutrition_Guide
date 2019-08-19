@@ -34,7 +34,7 @@ tr.alternate{
 }
 .nutrition-item-label{
   font-family:\"Gotham Black\";
-  color:#B2D235;
+  color:#0E2244;
   font-weight:400;
   text-transform:uppercase;
   letter-spacing:2px;
@@ -144,7 +144,7 @@ echo "</div>";
       <span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}</span>
     </p>
   </div>
-  <hr style=\"color:#B2D235;\">
+  <hr style=\"border: 1px solid #B2D235;\">
   <div>
     <p>
        <span class="nutrition-item" >Allergens</span>
