@@ -139,9 +139,11 @@ echo "</div>";
   <div>
     <p>
       <span class="nutrition-item-label">Calories</span> <span class="nutrition-item" >{{Cal}}</span>
+      <br>
+      <span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}</span>
     </p>
     <p>
-      <span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}</span>
+      <span class="nutrition-item-label">Saturated Fat</span> <span class="nutrition-item" >{{SF}}</span>
     </p>
   </div>
   <hr style=\"border: 1px solid #B2D235;\">
