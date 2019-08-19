@@ -28,7 +28,7 @@ tr.alternate{
 .ui-widget-header{
   font-family:\"Gotham Black\";font-weight:500;
   text-transform: uppercase;
-
+  overflow-wrap: normal;
   background-color:#F36C21;
   color:#FFFFFF;
 }
@@ -76,14 +76,14 @@ foreach ($items as $key => $value) {
   echo    "
       <th class=\"table-sortable:numeric mobileShowHide\"  style=''>PROTEIN</th>
       <th class=\"table-sortable:numeric mobileShowHide\"  style=''>CALS</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TOTAL<br>FAT</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>SAT<br>FAT</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TRANS<br>FAT</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>CHOLES-<br>TEROL</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TOTAL FAT</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>SAT FAT</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TRANS FAT</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>CHOLESTEROL</th>
       <th class=\"table-sortable:numeric mobileShowHide\"  style=''>SODIUM</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>NET<br>CARBS</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TOTAL<br>CARBS</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>DIETARY<br>FIBER</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>NET CARBS</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TOTAL CARBS</th>
+      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>DIETARY FIBER</th>
       <th class=\"table-sortable:numeric mobileShowHide\"  style=''>SUGARS</th>
       <th class=\"table-sortable:numeric mobileShowHide\"  style=''>ALLERGENS</th>
       ";
@@ -138,12 +138,16 @@ echo "</div>";
 	<input type="hidden" id="valueName" value="{{itemName}}">
   <div>
     <p>
-      <span class="nutrition-item-label">Calories</span> <span class="nutrition-item" >{{Cal}}</span>
-      <br>
-      <span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}</span>
-    </p>
-    <p>
-      <span class="nutrition-item-label">Saturated Fat</span> <span class="nutrition-item" >{{SF}}</span>
+      <span class="nutrition-item-label">Calories</span> <span class="nutrition-item" >{{Cal}}</span><br>
+      <span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}</span><br>
+      <span class="nutrition-item-label">Saturated Fat</span> <span class="nutrition-item" >{{SF}}</span><br>
+      <span class="nutrition-item-label">Trans Fat</span> <span class="nutrition-item" >{{TRF}}</span><br>
+      <span class="nutrition-item-label">Cholesterol</span> <span class="nutrition-item" >{{CHO}}</span><br>
+      <span class="nutrition-item-label">Sodium</span> <span class="nutrition-item" >{{SOD}}</span><br>
+      <span class="nutrition-item-label">Net Carbs</span> <span class="nutrition-item" >{{NC}}</span><br>
+      <span class="nutrition-item-label">Total Carbs</span> <span class="nutrition-item" >{{TC}}</span><br>
+      <span class="nutrition-item-label">Dietary Fiber</span> <span class="nutrition-item" >{{DF}}</span><br>
+      <span class="nutrition-item-label">Sugars</span> <span class="nutrition-item" >{{SG}}</span>
     </p>
   </div>
   <hr style=\"border: 1px solid #B2D235;\">
