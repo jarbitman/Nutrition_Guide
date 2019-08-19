@@ -98,7 +98,7 @@ foreach ($items as $key => $value) {
         $info=json_decode($item['itemInfo']);
         echo "
           <tr>
-          <td style='padding-top:5px;'><div  class='itemName' id='".strtolower(preg_replace("/[^a-z]/i", "", stripslashes($item['itemName'])))."' data-title='".stripslashes(strtoupper($item['itemName']))."' data-options='".$item['itemInfo']."'>".stripslashes($item['itemName'])."</div></td>
+          <td style='padding-top:5px;'><div  class='itemName' id='".strtolower(preg_replace("/[^a-z]/i", "", urlencode(stripslashes($item['itemName']))))."' data-title='".stripslashes(strtoupper($item['itemName']))."' data-options='".$item['itemInfo']."'>".stripslashes($item['itemName'])."</div></td>
           ";
           if(!isset($_GET['app']) || $_GET['app']!="true"){
       echo    "
