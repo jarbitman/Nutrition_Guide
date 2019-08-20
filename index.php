@@ -168,62 +168,6 @@ foreach ($items as $key => $value) {
        <span class="nutrition-item" >Dietary Preferences</span>
     </p>
   </div>
-  <!--
-	<div id="nutritionLabel"><div itemscope="" itemtype="http://schema.org/NutritionInformation" class="nutritionLabel" style=" width: 310px;">
-
-	<div class="bar1"></div>
-	<div class="line m" tabindex="0"><strong>Amount Per Serving</strong></div>
-  <div class="line">
-  		<div class="fr" tabindex="0">
-  </div>
-  		<div class="" tabindex="0">
-  <strong>Calories</strong> <span itemprop="calories">{{Cal}}</span></div>
-  	</div>
-	<div class="bar2"></div>
-	<div class="line ar "><strong>% Daily Value<sup>*</sup></strong></div>
-	<div class="line" tabindex="0">
-		<div class="dv" aria-hidden="true"><strong>{{totalfatperc}}</strong>%</div>
-		<strong>Total Fat</strong> <span itemprop="fatContent">{{TF}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span>
-	</span></div>
-	<div class="line indent" tabindex="0">
-		<div class="dv" aria-hidden="true"><strong>{{satfatperc}}</strong>%</div>
-		Saturated Fat <span itemprop="saturatedFatContent">{{SF}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span>
-	</span></div>
-	<div class="line indent" tabindex="0">
-		<em>Trans</em> Fat <span itemprop="transFatContent">{{TRF}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span>
-	</span></div>
-	<div class="line" tabindex="0">
-		<div class="dv" aria-hidden="true"><strong>{{cholesterolperc}}</strong>%</div>
-		<strong>Cholesterol</strong> <span itemprop="cholesterolContent">{{CHO}}<span aria-hidden="true">mg</span><span class="sr-only"> milligrams</span>
-	</span></div>
-	<div class="line" tabindex="0">
-		<div class="dv" aria-hidden="true"><strong>{{sodiumperc}}</strong>%</div>
-		<strong>Sodium</strong> <span itemprop="sodiumContent">{{SOD}}<span aria-hidden="true">mg</span><span class="sr-only"> milligrams</span>
-	</span></div>
-	<div class="line" tabindex="0">
-		<div class="dv" aria-hidden="true"><strong>{{carbsperc}}</strong>%</div>
-		<strong>Net Carbohydrates</strong> <span itemprop="carbohydrateContent">{{NC}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span>
-	</span></div>
-	<div class="line indent" tabindex="0">
-		<div class="dv" aria-hidden="true"><strong>{{fiberperc}}</strong>%</div>
-		Dietary Fiber <span itemprop="fiberContent">{{DF}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span>
-	</span></div>
-	<div class="line indent" tabindex="0">
-		Sugars <span itemprop="sugarContent">{{SG}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span>
-	</span></div>
-	<div class="line" tabindex="0">
-<strong>Protein</strong> <span itemprop="proteinContent">{{PR}}<span aria-hidden="true">g</span><span class="sr-only"> grams</span></span></div>
-	<div class="bar1"></div>
-	<div class="dvCalorieDiet line">
-		<div class="calorieNote">
-			<span tabindex="0"><span class="star" aria-hidden="true">*</span> Percent Daily Values are based on a 2000 calorie diet.</span>
-		</div>
-
-	</div>
-
-</div>
-</div>
--->
 </div>
 </div>
 </div>
