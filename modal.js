@@ -1,18 +1,29 @@
-$(".itemName").on("click", function(e) {
-  itemOptions = $("#" + e.target.id).data("options");
-  var nutritionLabel = $("#modalNutritionLabelParent").html();
-  var dailyValues = {"fat": 65, "saturatedFat": 20, "cholesterol": 300, "sodium": 2400, "carbohydrates": 300, "fiber": 25};
+var nutritionLabel = $("#modalNutritionLabelParent").html(),
+    dailyValues = {"fat": 65, "saturatedFat": 20, "cholesterol": 300, "sodium": 2400, "carbohydrates": 300, "fiber": 25};
 
-  itemOptions.totalfatperc = "" + Math.round(parseInt(itemOptions.TF.replace(/[^0-9]/g), '')/dailyValues.fat * 100);
-  itemOptions.satfatperc = "" + Math.round(parseInt(itemOptions.SF.replace(/[^0-9]/g), '')/dailyValues.saturatedFat * 100);
-  itemOptions.cholesterolperc = "" + Math.round(parseInt(itemOptions.CHO.replace(/[^0-9]/g), '')/dailyValues.cholesterol * 100);
-  itemOptions.sodiumperc = "" + Math.round(parseInt(itemOptions.CHO.replace(/[^0-9]/g), '')/dailyValues.sodium * 100);
-  itemOptions.carbsperc = "" + Math.round(parseInt(itemOptions.NC.replace(/[^0-9]/g), '')/dailyValues.carbohydrates * 100);
-  itemOptions.fiberperc = "" + Math.round(parseInt(itemOptions.DF.replace(/[^0-9]/g), '')/dailyValues.fiber * 100);
+function convertDailyValue(amount, dv) {
+  var amountAsInt = parseInt(amount.replace(/[^0-9]/g), '');
+  if (dv != 0) {
+    return "" + Math.round(amountAsInt/dv * 100);
+  } else {
+    return amountAsInt;
+  }
+}
+
+$(".itemName").on("click", function(e) {
+  var elem = $("#" + e.target.id),
+      itemOptions = elem.data("options");
+
+  itemOptions.totalfatperc = convertDailyValue(itemOptions.TF, dailyValues.fat);
+  itemOptions.satfatperc = convertDailyValue(itemOptions.SF, dailyValues.saturatedFat);
+  itemOptions.cholesterolperc = convertDailyValue(itemOptions.CHO, dailyValues.cholesterol);
+  itemOptions.sodiumperc = convertDailyValue(itemOptions.CHO, dailyValues.sodium);
+  itemOptions.carbsperc = convertDailyValue(itemOptions.NC, dailyValues.carbohydrates);
+  itemOptions.fiberperc = convertDailyValue(itemOptions.DF, dailyValues.fiber);
 
   nutritionLabel = nutritionLabel.replace(/\{\{([a-z]+)\}\}/gi, function(_, field) {
     if (itemOptions[field]) {
-      return itemOptions[field].replace(/[^0-9]/g, '');
+      return itemOptions[field];
     } else {
       return '';
     }
@@ -21,11 +32,12 @@ $(".itemName").on("click", function(e) {
   $( "#nutrition-dialog").dialog({
     modal: true,
     width: 375,
-    title: decodeURIComponent($("#" + e.target.id).data("title")),
+    title: decodeURIComponent(elem.data("title")),
     buttons: {
       Ok: function() {
-        $( this ).dialog( "close" );
+        $(this).dialog("close");
       }
     }
-  }).prev(".ui-dialog-titlebar").css("white-space","wrap");;
+  });
+  $(".ui-dialog-title").css("white-space","normal");
 });
