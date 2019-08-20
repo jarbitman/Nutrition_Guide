@@ -1,122 +1,128 @@
 <?php
 $mysqli = new mysqli("10.80.0.3", "pbconnect", 'KS4DV42pYJ2eNSYB', "pbc2");
 include("header.php");
-$items=array();
+
+$isApp = !empty($_GET['app']) && $_GET['app'] == "true";
+
+$items = array();
 $groups[1]="BREAKFAST / COFFEE";
 $groups[2]="SHAKES";
 $groups[3]="BOWLS/BAR-RITOS";
 $groups[4]="CHILIS/SOUPS";
 $groups[5]="SALADS/WRAPS";
 $groups[6]="KIDS MENU";
-$q="SELECT itemName,itemInfo,itemSection FROM pbc_public_nutritional WHERE published=1 ORDER BY itemName";
+$q = "SELECT itemName,itemInfo,itemSection FROM pbc_public_nutritional WHERE published=1 ORDER BY itemName";
 $stmt = $mysqli->stmt_init();
 $stmt->prepare($q);
 $stmt->execute();
 $result = $stmt->get_result();
-while($row=$result->fetch_object()){
-  $items[$row->itemSection][]=array("itemName"=>$row->itemName,"itemInfo"=>$row->itemInfo);
+while($row = $result->fetch_object()){
+  $items[$row->itemSection][] = array("itemName" => $row->itemName, "itemInfo" => $row->itemInfo);
 }
-echo "
+?>
 <style>
 th {
-  color:#FFFFFF;
-
+  color: #FFFFFF;
 }
 tr.alternate{
-  background-color:#ccf
+  background-color: #ccf;
+}
+.indent-value {
+  text-indent: 15px;
 }
 .ui-widget-header{
-  font-family:\"Trade Gothic Bold Condensed\";
-  font-size:1.75em;
+  font-family: "Trade Gothic Bold Condensed";
+  font-size: 1.75em;
   text-transform: uppercase;
   overflow-wrap: break-word;
-  background-color:#F36C21;
-  color:#FFFFFF;
+  background-color: #F36C21;
+  color: #FFFFFF;
 }
 .ui-dialog .ui-dialog-title {
   white-space: wrap;
   overflow: wrap;
 }
 .nutrition-item-label{
-  font-family:\"Trade Gothic Bold Condensed\";
+  font-family: "Trade Gothic Bold Condensed";
   color:#0E2244;
   font-size:1.5em;
   text-transform:uppercase;
   letter-spacing:2px;
 }
 .nutrition-item{
-  font-family:\"Lora\";
-  font-size:1rem;
+  font-family: "Lora";
+  font-size: 1rem;
   line-height:1.5;
   color:#444;
 }
 @media all and (max-width: 767px) {
   td.mobileShowHide{
     display:none;
-    width:0;
-    height:0;
-    opacity:0;
+    width: 0;
+    height: 0;
+    opacity: 0;
     visibility: collapse;
   }
   th.mobileShowHide{
-    display:none;
-    width:0;
-    height:0;
-    opacity:0;
+    display: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
     visibility: collapse;
   }
 }
 </style>
 <h4>Click on an item's name to view the nutrition label</h4>
-<div id=\"accordion\">";
+<div id="accordion">
+<?php
 foreach ($items as $key => $value) {
-  echo "  <h3 style='background-color:#b2d235;color:#FFFFFF;'>".$groups[$key]."</h3>
+  echo "  <h3 style='background-color:#b2d235;color:#FFFFFF;'>" . $groups[$key] . "</h3>
   <div>
   <table id=\"nut-".$key."\" class=\"table-stripeclass:alternate table-autostripe full_width\" style='width:100%;'>
     <thead>
       <tr style='background-color:#0e2244;'>
-      <th class=\"\"  style='padding:3px;'></th>
+      <th class=\"\" style='padding:3px;'></th>
       ";
-      if(!isset($_GET['app']) || $_GET['app']!="true"){
-  echo    "
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>PROTEIN</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>CALS</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TOTAL FAT</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>SAT FAT</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TRANS FAT</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>CHOLESTEROL</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>SODIUM</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>NET CARBS</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>TOTAL CARBS</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>DIETARY FIBER</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>SUGARS</th>
-      <th class=\"table-sortable:numeric mobileShowHide\"  style=''>ALLERGENS</th>
-      ";
-    }
-    echo    "
+      if(!$isApp){ ?>
+      <th class="table-sortable:numeric mobileShowHide" style="">PROTEIN</th>
+      <th class="table-sortable:numeric mobileShowHide" style="">CALS</th>
+      <th class="table-sortable:numeric mobileShowHide" style="">TOTAL FAT</th>
+      <th class="table-sortable:numeric mobileShowHide" style="">SAT FAT</th>
+      <th class="table-sortable:numeric mobileShowHide" style="">TRANS FAT</th>
+      <th class="table-sortable:numeric mobileShowHide" style="">CHOLESTEROL</th>
+      <th class="table-sortable:numeric mobileShowHide" style="">SODIUM</th>
+      <th class="table-sortable:numeric mobileShowHide" style="">NET CARBS</th>
+      <th class="table-sortable:numeric mobileShowHide" style="">TOTAL CARBS</th>
+      <th class="table-sortable:numeric mobileShowHide" style="">DIETARY FIBER</th>
+      <th class="table-sortable:numeric mobileShowHide" style="">SUGARS</th>
+      <th class="table-sortable:numeric mobileShowHide" style="">ALLERGENS</th>
+      <?php
+    } ?>
       </tr>
       </thead>
       <tbody>
-      ";
+<?php
       foreach($value as $item){
         $info=json_decode($item['itemInfo']);
+
+        $itemName = stripslashes($item['itemName']);
         echo "
           <tr>
-          <td style='padding-top:5px;'><div  class='itemName' id='".strtolower(preg_replace("/[^a-z]/i", "", urlencode(stripslashes($item['itemName']))))."' data-title='". str_replace("+", " ",urlencode(stripslashes(strtoupper($item['itemName']))))."' data-options='".$item['itemInfo']."'>".stripslashes($item['itemName'])."</div></td>
+          <td style='padding-top:5px;'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>
           ";
-          if(!isset($_GET['app']) || $_GET['app']!="true"){
-      echo    "
-          <td class=\"mobileShowHide\">".stripslashes($info->PR)."</td>
-          <td class=\"mobileShowHide\">".stripslashes($info->Cal)."</td>
-          <td class=\"mobileShowHide\">".stripslashes($info->TF)."</td>
-          <td class=\"mobileShowHide\">".stripslashes($info->SF)."</td>
-          <td class=\"mobileShowHide\">".stripslashes($info->TRF)."</td>
-          <td class=\"mobileShowHide\">".stripslashes($info->CHO)."</td>
-          <td class=\"mobileShowHide\">".stripslashes($info->SOD)."</td>
-          <td class=\"mobileShowHide\">".stripslashes($info->NC)."</td>
-          <td class=\"mobileShowHide\">".stripslashes($info->TC)."</td>
-          <td class=\"mobileShowHide\">".stripslashes($info->DF)."</td>
-          <td class=\"mobileShowHide\">".stripslashes($info->SG)."</td>
+          if(!$isApp){
+      echo "
+          <td class=\"mobileShowHide\">" . stripslashes($info->PR) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->Cal) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->TF) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->SF) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->TRF) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->CHO) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->SOD) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->NC) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->TC) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->DF) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->SG) . "</td>
           <td class=\"mobileShowHide\"></td>
           ";
         }
@@ -124,15 +130,14 @@ foreach ($items as $key => $value) {
           </tr>
         ";
       }
-
-echo   "
+?>
         </tbody>
       </table>
-  </div>";
+  </div>
+<?php
 }
-echo "</div>";
-
 ?>
+</div>
 <div id="nutrition-dialog">
 </div>
 <div id="modalNutritionLabelParent" style="display:none;">
@@ -143,18 +148,18 @@ echo "</div>";
 	<input type="hidden" id="valueName" value="{{itemName}}">
   <div>
       <div><span class="nutrition-item-label">Calories</span> <span class="nutrition-item" >{{Cal}}</span></div>
-      <div style="text-indent: 15px;"><span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}g</span></div>
-      <div style="text-indent: 15px;"><span class="nutrition-item-label">Saturated Fat</span> <span class="nutrition-item" >{{SF}}g</span></div>
-      <div style="text-indent: 15px;"><span class="nutrition-item-label">Trans Fat</span> <span class="nutrition-item" >{{TRF}}g</span></div>
+      <div class="indent-value"><span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}g</span></div>
+      <div class="indent-value"><span class="nutrition-item-label">Saturated Fat</span> <span class="nutrition-item" >{{SF}}g</span></div>
+      <div class="indent-value"><span class="nutrition-item-label">Trans Fat</span> <span class="nutrition-item" >{{TRF}}g</span></div>
       <div><span class="nutrition-item-label">Cholesterol</span> <span class="nutrition-item" >{{CHO}}mg</span></div>
       <div><span class="nutrition-item-label">Sodium</span> <span class="nutrition-item" >{{SOD}}mg</span></div>
       <div><span class="nutrition-item-label">Net Carbs</span> <span class="nutrition-item" >{{NC}}g</span></div>
       <div><span class="nutrition-item-label">Total Carbs</span> <span class="nutrition-item" >{{TC}}g</span></div>
-      <div style="text-indent: 15px;"><span class="nutrition-item-label">Dietary Fiber</span> <span class="nutrition-item" >{{DF}}g</span></div>
-      <div style="text-indent: 15px;"><span class="nutrition-item-label">Sugars</span> <span class="nutrition-item" >{{SG}}g</span></div>
+      <div class="indent-value"><span class="nutrition-item-label">Dietary Fiber</span> <span class="nutrition-item" >{{DF}}g</span></div>
+      <div class="indent-value"><span class="nutrition-item-label">Sugars</span> <span class="nutrition-item" >{{SG}}g</span></div>
       <div><span class="nutrition-item-label">Protein</span> <span class="nutrition-item" >{{PR}}g</span></div>
   </div>
-  <hr style=\"border: 2px solid #B2D235;\">
+  <hr style="border: 2px solid #B2D235;">
   <div>
     <p>
        <span class="nutrition-item" >Allergens</span>
