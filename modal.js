@@ -42,4 +42,5 @@ $(".itemName").on("click", function(e) {
     }
   });
   $(".ui-dialog-title").css("white-space","normal");
+  $(".ui-dialog-titlebar-close").blur();
 });
