@@ -84,18 +84,18 @@ foreach ($items as $key => $value) {
       <th class=\"\" style='padding:3px;'></th>
       ";
       if(!$isApp){ ?>
-      <th class="table-sortable:numeric mobileShowHide" style="">PROTEIN</th>
-      <th class="table-sortable:numeric mobileShowHide" style="">CALS</th>
-      <th class="table-sortable:numeric mobileShowHide" style="">TOTAL FAT</th>
-      <th class="table-sortable:numeric mobileShowHide" style="">SAT FAT</th>
-      <th class="table-sortable:numeric mobileShowHide" style="">TRANS FAT</th>
-      <th class="table-sortable:numeric mobileShowHide" style="">CHOLESTEROL</th>
-      <th class="table-sortable:numeric mobileShowHide" style="">SODIUM</th>
-      <th class="table-sortable:numeric mobileShowHide" style="">NET CARBS</th>
-      <th class="table-sortable:numeric mobileShowHide" style="">TOTAL CARBS</th>
-      <th class="table-sortable:numeric mobileShowHide" style="">DIETARY FIBER</th>
-      <th class="table-sortable:numeric mobileShowHide" style="">SUGARS</th>
-      <th class="table-sortable:numeric mobileShowHide" style="">ALLERGENS</th>
+      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">PROTEIN</th>
+      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">CALS</th>
+      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">TOTAL FAT</th>
+      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">SAT FAT</th>
+      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">TRANS FAT</th>
+      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">CHOLESTEROL</th>
+      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">SODIUM</th>
+      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">NET CARBS</th>
+      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">TOTAL CARBS</th>
+      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">DIETARY FIBER</th>
+      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">SUGARS</th>
+      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">ALLERGENS</th>
       <?php
     } ?>
       </tr>
@@ -108,21 +108,21 @@ foreach ($items as $key => $value) {
         $itemName = stripslashes($item['itemName']);
         echo "
           <tr>
-          <td style='padding-top:5px;'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>
+          <td style='padding-top:5px;font-family: \"Lora\";'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>
           ";
           if(!$isApp){
       echo "
-          <td class=\"mobileShowHide\">" . stripslashes($info->PR) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->Cal) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->TF) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->SF) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->TRF) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->CHO) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->SOD) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->NC) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->TC) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->DF) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->SG) . "</td>
+          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->PR) . "</td>
+          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->Cal) . "</td>
+          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->TF) . "</td>
+          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->SF) . "</td>
+          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->TRF) . "</td>
+          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->CHO) . "</td>
+          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->SOD) . "</td>
+          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->NC) . "</td>
+          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->TC) . "</td>
+          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->DF) . "</td>
+          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->SG) . "</td>
           <td class=\"mobileShowHide\"></td>
           ";
         }
@@ -148,7 +148,7 @@ foreach ($items as $key => $value) {
 	<input type="hidden" id="valueName" value="{{itemName}}">
   <div>
       <div><span class="nutrition-item-label">Calories</span> <span class="nutrition-item" >{{Cal}}</span></div>
-      <div style="text-indent: 15px;"><span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}</span></div>
+      <div><span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}</span></div>
       <div style="text-indent: 15px;"><span class="nutrition-item-label">Saturated Fat</span> <span class="nutrition-item" >{{SF}}</span></div>
       <div style="text-indent: 15px;"><span class="nutrition-item-label">Trans Fat</span> <span class="nutrition-item" >{{TRF}}</span></div>
       <div><span class="nutrition-item-label">Cholesterol</span> <span class="nutrition-item" >{{CHO}}</span></div>
@@ -162,10 +162,12 @@ foreach ($items as $key => $value) {
   <hr style="border: 2px solid #B2D235;">
   <div>
     <p>
-       <span class="nutrition-item" >Allergens</span>
+       <span class="nutrition-item" >Allergens</span><br>
+       {{ALLERGENS}}
     </p>
     <p>
-       <span class="nutrition-item" >Dietary Preferences</span>
+       <span class="nutrition-item" >Dietary Preferences</span><br>
+       {{DIETARY}}
     </p>
   </div>
 </div>
