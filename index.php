@@ -95,7 +95,6 @@ foreach ($items as $key => $value) {
       <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">TOTAL CARBS</th>
       <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">DIETARY FIBER</th>
       <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">SUGARS</th>
-      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">ALLERGENS</th>
       <?php
     } ?>
       </tr>
@@ -123,7 +122,6 @@ foreach ($items as $key => $value) {
           <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->TC) . "</td>
           <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->DF) . "</td>
           <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->SG) . "</td>
-          <td class=\"mobileShowHide\"></td>
           ";
         }
         echo    "
@@ -147,6 +145,7 @@ foreach ($items as $key => $value) {
 
 	<input type="hidden" id="valueName" value="{{itemName}}">
   <div>
+      <div><span class="nutrition-item-label">Protein</span> <span class="nutrition-item" >{{PR}}</span></div>
       <div><span class="nutrition-item-label">Calories</span> <span class="nutrition-item" >{{Cal}}</span></div>
       <div><span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}</span></div>
       <div style="text-indent: 15px;"><span class="nutrition-item-label">Saturated Fat</span> <span class="nutrition-item" >{{SF}}</span></div>
@@ -157,7 +156,6 @@ foreach ($items as $key => $value) {
       <div><span class="nutrition-item-label">Total Carbs</span> <span class="nutrition-item" >{{TC}}</span></div>
       <div style="text-indent: 15px;"><span class="nutrition-item-label">Dietary Fiber</span> <span class="nutrition-item" >{{DF}}</span></div>
       <div style="text-indent: 15px;"><span class="nutrition-item-label">Sugars</span> <span class="nutrition-item" >{{SG}}</span></div>
-      <div><span class="nutrition-item-label">Protein</span> <span class="nutrition-item" >{{PR}}</span></div>
   </div>
   <hr style="border: 2px solid #B2D235;">
   <div>
