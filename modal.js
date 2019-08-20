@@ -1,5 +1,4 @@
-var nutritionLabel = $("#modalNutritionLabelParent").html(),
-    dailyValues = {"fat": 65, "saturatedFat": 20, "cholesterol": 300, "sodium": 2400, "carbohydrates": 300, "fiber": 25};
+var dailyValues = {"fat": 65, "saturatedFat": 20, "cholesterol": 300, "sodium": 2400, "carbohydrates": 300, "fiber": 25};
 
 function convertDailyValue(amount, dv) {
   var amountAsInt = parseInt(amount.replace(/[^0-9]/g), '');
@@ -12,7 +11,8 @@ function convertDailyValue(amount, dv) {
 
 $(".itemName").on("click", function(e) {
   var elem = $("#" + e.target.id),
-      itemOptions = elem.data("options");
+      itemOptions = elem.data("options"),
+      nutritionLabel = $("#modalNutritionLabelParent").html();
 
   itemOptions.totalfatperc = convertDailyValue(itemOptions.TF, dailyValues.fat);
   itemOptions.satfatperc = convertDailyValue(itemOptions.SF, dailyValues.saturatedFat);
