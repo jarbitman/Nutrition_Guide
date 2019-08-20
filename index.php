@@ -70,6 +70,9 @@ tr.alternate{
     opacity: 0;
     visibility: collapse;
   }
+  .txt:hover {
+    text-decoration: underline;
+}
 }
 </style>
 <h4>Click on an item's name to view the nutrition label</h4>
@@ -107,7 +110,7 @@ foreach ($items as $key => $value) {
         $itemName = stripslashes($item['itemName']);
         echo "
           <tr>
-          <td style='padding-top:5px;font-family: \"Lora\";'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>
+          <td style='padding-top:5px;font-family: \"Lora\";'><div class='itemName txt' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>
           ";
           if(!$isApp){
       echo "
