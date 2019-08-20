@@ -33,11 +33,13 @@ $(".itemName").on("click", function(e) {
     modal: true,
     width: 375,
     title: decodeURIComponent(elem.data("title")),
+    /*
     buttons: {
       Ok: function() {
         $(this).dialog("close");
       }
     }
+    */
   });
   $(".ui-dialog-title").css("white-space","normal");
 });
