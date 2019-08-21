@@ -24,12 +24,12 @@ while($row = $result->fetch_object()){
 <div id="accordion">
 <?php
 foreach ($items as $key => $value) {
-  echo "  <h3 style='background-color:#b2d235;color:#FFFFFF;'>" . $groups[$key] . "</h3>
+  echo "  <h3 style='background-color:#b2d235;color:#ffffff;'>" . $groups[$key] . "</h3>
   <div>
-  <table id=\"nut-".$key."\" class=\"table-stripeclass:alternate table-autostripe full_width\" style='width:100%;'>
+  <table id='nut-" . $key . "' class='table-stripeclass:alternate table-autostripe full_width'>
     <thead>
       <tr style='background-color:#0e2244;'>
-      <th class=\"\" style='padding:3px;'></th>
+      <th style='padding:3px;'></th>
       ";
       if(!$isApp){ ?>
       <th class="table-sortable:numeric mobileShowHide">PROTEIN</th>
@@ -53,7 +53,7 @@ foreach ($items as $key => $value) {
         $info=json_decode($item['itemInfo']);
 
         $itemName = stripslashes($item['itemName']);
-        echo "          <tr>
+        echo "        <tr>
           <td style='padding-top:5px;'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>\n";
           if(!$isApp){
         echo "          <td class=\"mobileShowHide\">" . stripslashes($info->PR) . "</td>
@@ -68,7 +68,7 @@ foreach ($items as $key => $value) {
           <td class=\"mobileShowHide\">" . stripslashes($info->DF) . "</td>
           <td class=\"mobileShowHide\">" . stripslashes($info->SG) . "</td>\n";
         }
-        echo "\n        </tr>\n";
+        echo "        </tr>\n";
       }
 ?>
         </tbody>

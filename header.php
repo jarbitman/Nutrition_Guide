@@ -70,6 +70,9 @@
         line-height: 1.5;
         color: #444;
       }
+      .full_width {
+        width: 100%;
+      }
       @media all and (max-width: 767px) {
         td.mobileShowHide{
           display: none;
