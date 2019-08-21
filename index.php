@@ -26,7 +26,7 @@ foreach ($items as $key => $value) {
       <tr style='background-color:#0e2244;'>
         <th style='padding:3px;'></th>\n";
       if(!$isApp){ ?>
-        <th class="table-sortable:alphanumeric mobileShowHide">PROTEIN</th>
+        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">PROTEIN</span></th>
         <th class="table-sortable:alphanumeric mobileShowHide">CALS</th>
         <th class="table-sortable:alphanumeric mobileShowHide">TOTAL FAT</th>
         <th class="table-sortable:alphanumeric mobileShowHide">SAT FAT</th>
