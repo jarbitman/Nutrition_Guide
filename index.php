@@ -20,64 +20,6 @@ while($row = $result->fetch_object()){
   $items[$row->itemSection][] = array("itemName" => $row->itemName, "itemInfo" => $row->itemInfo);
 }
 ?>
-<style>
-th {
-  color: #FFFFFF;
-}
-tr.alternate{
-  background-color: #ccf;
-}
-td {
-  font-family: "Lora";
-}
-.itemName:hover {
-  text-decoration: underline;
-}
-.indent-value {
-  text-indent: 15px;
-}
-.ui-widget-header{
-  font-family: "Trade Gothic Bold Condensed";
-  font-size: 1.75em;
-  text-transform: uppercase;
-  overflow-wrap: break-word;
-  background-color: #F36C21;
-  color: #FFFFFF;
-}
-.ui-dialog .ui-dialog-title {
-  white-space: wrap;
-  overflow: wrap;
-}
-.nutrition-item-label {
-  font-family: "Trade Gothic Bold Condensed";
-  color:#0E2244;
-  font-size:1.5em;
-  text-transform:uppercase;
-  letter-spacing:2px;
-}
-.nutrition-item {
-  font-family: "Lora";
-  font-size: 1rem;
-  line-height:1.5;
-  color:#444;
-}
-@media all and (max-width: 767px) {
-  td.mobileShowHide{
-    display:none;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    visibility: collapse;
-  }
-  th.mobileShowHide{
-    display: none;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    visibility: collapse;
-  }
-}
-</style>
 <h4>Click on an item's name to view the nutrition label</h4>
 <div id="accordion">
 <?php
