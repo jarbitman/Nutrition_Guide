@@ -53,10 +53,6 @@
         background-color: #f36c21;
         color: #ffffff;
       }
-      .ui-dialog .ui-dialog-title {
-        white-space: wrap;
-        overflow: wrap;
-      }
       .nutrition-item-label {
         font-family: "Trade Gothic Bold Condensed";
         color: #0E2244;

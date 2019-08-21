@@ -5,15 +5,10 @@ include("header.php");
 $isApp = !empty($_GET['app']) && $_GET['app'] == "true";
 
 $items = array();
-$groups[1]="BREAKFAST / COFFEE";
-$groups[2]="SHAKES";
-$groups[3]="BOWLS/BAR-RITOS";
-$groups[4]="CHILIS/SOUPS";
-$groups[5]="SALADS/WRAPS";
-$groups[6]="KIDS MENU";
-$q = "SELECT itemName,itemInfo,itemSection FROM pbc_public_nutritional WHERE published=1 ORDER BY itemName";
+$groups = ['', "BREAKFAST / COFFEE", "SHAKES", "BOWLS/BAR-RITOS", "CHILIS/SOUPS", "SALADS/WRAPS", "KIDS MENU"];
+
 $stmt = $mysqli->stmt_init();
-$stmt->prepare($q);
+$stmt->prepare("SELECT itemName, itemInfo, itemSection FROM pbc_public_nutritional WHERE published=1 ORDER BY itemName");
 $stmt->execute();
 $result = $stmt->get_result();
 while($row = $result->fetch_object()){
