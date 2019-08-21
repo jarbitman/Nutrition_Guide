@@ -27,16 +27,16 @@ foreach ($items as $key => $value) {
         <th style='padding:3px;'></th>\n";
       if(!$isApp){ ?>
         <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">PROTEIN</span></th>
-        <th class="table-sortable:alphanumeric mobileShowHide">CALS</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">TOTAL FAT</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">SAT FAT</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">TRANS FAT</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">CHOLESTEROL</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">SODIUM</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">NET CARBS</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">TOTAL CARBS</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">DIETARY FIBER</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">SUGARS</th>
+        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">CALS</span></th>
+        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">TOTAL FAT</span></th>
+        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">SAT FAT</span></th>
+        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">TRANS FAT</span></th>
+        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">CHOLESTEROL</span></th>
+        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">SODIUM</span></th>
+        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">NET CARBS</span></th>
+        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">TOTAL CARBS</span></th>
+        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">DIETARY FIBER</span></th>
+        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">SUGARS</span></th>
       <?php
     } ?>
       </tr>
