@@ -32,17 +32,17 @@ foreach ($items as $key => $value) {
       <th class=\"\" style='padding:3px;'></th>
       ";
       if(!$isApp){ ?>
-      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">PROTEIN</th>
-      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">CALS</th>
-      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">TOTAL FAT</th>
-      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">SAT FAT</th>
-      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">TRANS FAT</th>
-      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">CHOLESTEROL</th>
-      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">SODIUM</th>
-      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">NET CARBS</th>
-      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">TOTAL CARBS</th>
-      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">DIETARY FIBER</th>
-      <th class="table-sortable:numeric mobileShowHide" style="font-family: 'Trade Gothic Bold Condensed';">SUGARS</th>
+      <th class="table-sortable:numeric mobileShowHide">PROTEIN</th>
+      <th class="table-sortable:numeric mobileShowHide">CALS</th>
+      <th class="table-sortable:numeric mobileShowHide">TOTAL FAT</th>
+      <th class="table-sortable:numeric mobileShowHide">SAT FAT</th>
+      <th class="table-sortable:numeric mobileShowHide">TRANS FAT</th>
+      <th class="table-sortable:numeric mobileShowHide">CHOLESTEROL</th>
+      <th class="table-sortable:numeric mobileShowHide">SODIUM</th>
+      <th class="table-sortable:numeric mobileShowHide">NET CARBS</th>
+      <th class="table-sortable:numeric mobileShowHide">TOTAL CARBS</th>
+      <th class="table-sortable:numeric mobileShowHide">DIETARY FIBER</th>
+      <th class="table-sortable:numeric mobileShowHide">SUGARS</th>
       <?php
     } ?>
       </tr>
@@ -72,9 +72,7 @@ foreach ($items as $key => $value) {
           <td class=\"mobileShowHide\">" . stripslashes($info->SG) . "</td>
           ";
         }
-        echo    "
-          </tr>
-        ";
+        echo "\n</tr>\n";
       }
 ?>
         </tbody>

@@ -45,6 +45,7 @@
   <style>
   th {
     color: #FFFFFF;
+    font-family: 'Trade Gothic Bold Condensed';
   }
   tr.alternate{
     background-color: #ccf;
