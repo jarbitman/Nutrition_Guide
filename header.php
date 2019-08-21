@@ -25,81 +25,67 @@
 			<meta name="twitter:creator" content="@theproteinbar">
 			<meta name="twitter:image" content="https://images.getbento.com/lLXakZdwSQ6uVE7qz82h_pbklogo1.png?w=1200&fit=fill&auto=compress,format&h=600&bg=EDEDF1&pad=100">
 	<script type="text/javascript" src="https://theme-assets.getbento.com/sensei/a82ed78.sensei/assets/js/head.min.js"></script>
-	<script type="text/javascript">
-			WebFont.load({custom: { families: ["Gotham Black", "Lora", "Lora", "Trade Gothic Bold Condensed Oblique", "Trade Gothic Bold Condensed"] }});
-		</script>
-
 	<link rel="stylesheet" href="//assets-cdn-refresh.getbento.com/stylesheet/theproteinbar/scss/main.6a1635f8cad77f1901297b3217c1b36b.scss" />
-	<script type="text/javascript">
-	    Modernizr.addTest("maybemobile", function(){ return (Modernizr.touchevents && Modernizr.mq("only screen and (max-width: 768px)")) ? true : false; });
-	</script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="//c2.theproteinbar.com/Nutrition_Guide/label.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#accordion" ).accordion();
-  } );
-  </script>
   <style>
-  th {
-    color: #FFFFFF;
-    font-family: 'Trade Gothic Bold Condensed';
-  }
-  tr.alternate{
-    background-color: #ccf;
-  }
-  td {
-    font-family: "Lora";
-  }
-  .itemName:hover {
-    text-decoration: underline;
-  }
-  .indent-value {
-    text-indent: 15px;
-  }
-  .ui-widget-header{
-    font-family: "Trade Gothic Bold Condensed";
-    font-size: 1.75em;
-    text-transform: uppercase;
-    overflow-wrap: break-word;
-    background-color: #F36C21;
-    color: #FFFFFF;
-  }
-  .ui-dialog .ui-dialog-title {
-    white-space: wrap;
-    overflow: wrap;
-  }
-  .nutrition-item-label {
-    font-family: "Trade Gothic Bold Condensed";
-    color:#0E2244;
-    font-size:1.5em;
-    text-transform:uppercase;
-    letter-spacing:2px;
-  }
-  .nutrition-item {
-    font-family: "Lora";
-    font-size: 1rem;
-    line-height:1.5;
-    color:#444;
-  }
-  @media all and (max-width: 767px) {
-    td.mobileShowHide{
-      display:none;
-      width: 0;
-      height: 0;
-      opacity: 0;
-      visibility: collapse;
+    th {
+      color: #FFFFFF;
+      font-family: 'Trade Gothic Bold Condensed';
     }
-    th.mobileShowHide{
-      display: none;
-      width: 0;
-      height: 0;
-      opacity: 0;
-      visibility: collapse;
+    tr.alternate{
+      background-color: #ccf;
     }
-  }
+    td {
+      font-family: "Lora";
+    }
+    .itemName:hover {
+      text-decoration: underline;
+    }
+    .indent-value {
+      text-indent: 15px;
+    }
+    .ui-widget-header{
+      font-family: "Trade Gothic Bold Condensed";
+      font-size: 1.75em;
+      text-transform: uppercase;
+      overflow-wrap: break-word;
+      background-color: #F36C21;
+      color: #FFFFFF;
+    }
+    .ui-dialog .ui-dialog-title {
+      white-space: wrap;
+      overflow: wrap;
+    }
+    .nutrition-item-label {
+      font-family: "Trade Gothic Bold Condensed";
+      color:#0E2244;
+      font-size:1.5em;
+      text-transform:uppercase;
+      letter-spacing:2px;
+    }
+    .nutrition-item {
+      font-family: "Lora";
+      font-size: 1rem;
+      line-height:1.5;
+      color:#444;
+    }
+    @media all and (max-width: 767px) {
+      td.mobileShowHide{
+        display:none;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: collapse;
+      }
+      th.mobileShowHide{
+        display: none;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: collapse;
+      }
+    }
   </style>
 </head>
 <body>
