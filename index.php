@@ -87,11 +87,11 @@ foreach ($items as $key => $value) {
   <div>
     <p>
        <span class="nutrition-item">Allergens</span><br>
-       {{ALLERGENS}}
+       {{allergens}}
     </p>
     <p>
        <span class="nutrition-item">Dietary Preferences</span><br>
-       {{DIETARY}}
+       {{preferences}}
     </p>
   </div>
 </div>
