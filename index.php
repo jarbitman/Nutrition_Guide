@@ -27,6 +27,12 @@ th {
 tr.alternate{
   background-color: #ccf;
 }
+td {
+  font-family: "Lora";
+}
+.itemName:hover {
+  text-decoration: underline;
+}
 .indent-value {
   text-indent: 15px;
 }
@@ -42,14 +48,14 @@ tr.alternate{
   white-space: wrap;
   overflow: wrap;
 }
-.nutrition-item-label{
+.nutrition-item-label {
   font-family: "Trade Gothic Bold Condensed";
   color:#0E2244;
   font-size:1.5em;
   text-transform:uppercase;
   letter-spacing:2px;
 }
-.nutrition-item{
+.nutrition-item {
   font-family: "Lora";
   font-size: 1rem;
   line-height:1.5;
@@ -70,9 +76,6 @@ tr.alternate{
     opacity: 0;
     visibility: collapse;
   }
-  .txt:hover {
-    text-decoration: underline;
-}
 }
 </style>
 <h4>Click on an item's name to view the nutrition label</h4>
@@ -110,21 +113,21 @@ foreach ($items as $key => $value) {
         $itemName = stripslashes($item['itemName']);
         echo "
           <tr>
-          <td style='padding-top:5px;font-family: \"Lora\";'><div class='itemName txt' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>
+          <td style='padding-top:5px;'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>
           ";
           if(!$isApp){
       echo "
-          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->PR) . "</td>
-          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->Cal) . "</td>
-          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->TF) . "</td>
-          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->SF) . "</td>
-          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->TRF) . "</td>
-          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->CHO) . "</td>
-          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->SOD) . "</td>
-          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->NC) . "</td>
-          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->TC) . "</td>
-          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->DF) . "</td>
-          <td class=\"mobileShowHide\" style='font-family: \"Lora\";'>" . stripslashes($info->SG) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->PR) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->Cal) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->TF) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->SF) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->TRF) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->CHO) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->SOD) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->NC) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->TC) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->DF) . "</td>
+          <td class=\"mobileShowHide\">" . stripslashes($info->SG) . "</td>
           ";
         }
         echo    "
