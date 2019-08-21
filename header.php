@@ -32,6 +32,17 @@
       table.sort13 th.table-sortable { background-image:none; }
       table.sort13 th.table-sorted-asc { background-image:url("icons/13_ascending.gif"); }
       table.sort13 th.table-sorted-desc { background-image:url("icons/13_descending.gif"); }
+      .iconset {
+	       margin:5px;
+	       border:1px solid #cccccc;
+	       border-color:#cccccc #666666 #666666 #cccccc;
+	       text-align:center;
+	       cursor:pointer;
+         width:100px;
+       }
+     .iconset img {
+	      margin:3px;
+      }
       th {
         color: #ffffff;
         font-family: 'Trade Gothic Bold Condensed';
