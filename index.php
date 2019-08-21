@@ -5,7 +5,7 @@ include("header.php");
 $isApp = !empty($_GET['app']) && $_GET['app'] == "true";
 
 $items = array();
-$groups = ['', "BREAKFAST / COFFEE", "SHAKES", "BOWLS/BAR-RITOS", "CHILIS/SOUPS", "SALADS/WRAPS", "KIDS MENU"];
+$groups = ['', 1=>"BREAKFAST", 2=>"SHAKES", 3=>"BOWLS/BAR-RITOS", 5=>"SALADS/WRAPS",4=>"CHILIS/SOUPS",  6=>"KIDS MENU", 7=>"COFFEE"];
 
 $stmt = $mysqli->stmt_init();
 $stmt->prepare("SELECT itemName, itemInfo, itemSection FROM pbc_public_nutritional WHERE published=1 ORDER BY itemName");
@@ -26,17 +26,17 @@ foreach ($items as $key => $value) {
       <tr style='background-color:#0e2244;'>
         <th style='padding:3px;'></th>\n";
       if(!$isApp){ ?>
-        <th class="table-sortable:alphanumeric mobileShowHide">PROTEIN</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">CALS</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">TOTAL FAT</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">SAT FAT</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">TRANS FAT</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">CHOLESTEROL</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">SODIUM</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">NET CARBS</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">TOTAL CARBS</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">DIETARY FIBER</th>
-        <th class="table-sortable:alphanumeric mobileShowHide">SUGARS</th>
+        <th class="table-sortable:alphanumeric mobileShowHide sort13">PROTEIN</th>
+        <th class="table-sortable:alphanumeric mobileShowHide sort13">CALS</th>
+        <th class="table-sortable:alphanumeric mobileShowHide sort13">TOTAL FAT</th>
+        <th class="table-sortable:alphanumeric mobileShowHide sort13">SAT FAT</th>
+        <th class="table-sortable:alphanumeric mobileShowHide sort13">TRANS FAT</th>
+        <th class="table-sortable:alphanumeric mobileShowHide sort13">CHOLESTEROL</th>
+        <th class="table-sortable:alphanumeric mobileShowHide sort13">SODIUM</th>
+        <th class="table-sortable:alphanumeric mobileShowHide sort13">NET CARBS</th>
+        <th class="table-sortable:alphanumeric mobileShowHide sort13">TOTAL CARBS</th>
+        <th class="table-sortable:alphanumeric mobileShowHide sort13">DIETARY FIBER</th>
+        <th class="table-sortable:alphanumeric mobileShowHide sort13">SUGARS</th>
       <?php
     } ?>
       </tr>
