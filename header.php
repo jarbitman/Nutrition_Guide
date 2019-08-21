@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="//c2.theproteinbar.com/Nutrition_Guide/label.css">
     <style>
-      th.table-sortable { background-image:url("icons/descending.gif"); background-repeat: no-repeat;background-position: left center; }
+      th.table-sortable { background-image:url("icons/upanddown.gif"); background-repeat: no-repeat;background-position: left center; }
       th.table-sorted-asc { background-image:url("icons/ascending.gif"); background-repeat: no-repeat;background-position: left center; }
       th.table-sorted-desc { background-image:url("icons/descending.gif"); background-repeat: no-repeat;background-position: left center; }
       .iconset {
