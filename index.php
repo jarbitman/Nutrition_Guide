@@ -18,8 +18,8 @@ while($row = $result->fetch_object()){
 <h4>Click on an item's name to view the nutrition label</h4>
 <div id="accordion">
 <?php
-foreach ($items as $key => $value) {
-  echo "  <h3 style='background-color:#b2d235;color:#ffffff;'>" . $groups[$key] . "</h3>
+foreach ($groups as $key => $value) {
+  echo "  <h3 style='background-color:#b2d235;color:#ffffff;'>" . $value . "</h3>
   <div>
   <table id='nut-" . $key . "' class='table-autosort:0 table-stripeclass:alternate table-autostripe full_width'>
     <thead>
@@ -43,7 +43,7 @@ foreach ($items as $key => $value) {
     </thead>
     <tbody>
 <?php
-      foreach($value as $item){
+      foreach($items[$key] as $item){
         $info = json_decode($item['itemInfo'], true);
 
         $itemName = stripslashes($item['itemName']);
