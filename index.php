@@ -8,7 +8,7 @@ $items = array();
 $groups = [1=>"BREAKFAST SCRAMBLES", 8=>"BREAKFAST OATMEAL", 2=>"SHAKES", 3=>"BOWLS/BAR-RITOS", 5=>"SALADS/WRAPS",4=>"CHILIS/SOUPS",  6=>"KIDS MENU", 7=>"COFFEE"];
 
 $stmt = $mysqli->stmt_init();
-$stmt->prepare("SELECT itemName, itemInfo, itemSection FROM pbc_public_nutritional WHERE published=1 ORDER BY itemName");
+$stmt->prepare("SELECT itemName, itemInfo, itemSection FROM pbc_public_nutritional WHERE published=1 ORDER BY itemSection,itemName");
 $stmt->execute();
 $result = $stmt->get_result();
 while($row = $result->fetch_object()){
