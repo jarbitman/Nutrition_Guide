@@ -53,13 +53,10 @@ foreach ($items as $key => $value) {
         $info=json_decode($item['itemInfo']);
 
         $itemName = stripslashes($item['itemName']);
-        echo "
-          <tr>
-          <td style='padding-top:5px;'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>
-          ";
+        echo "          <tr>
+          <td style='padding-top:5px;'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>\n";
           if(!$isApp){
-      echo "
-          <td class=\"mobileShowHide\">" . stripslashes($info->PR) . "</td>
+        echo "          <td class=\"mobileShowHide\">" . stripslashes($info->PR) . "</td>
           <td class=\"mobileShowHide\">" . stripslashes($info->Cal) . "</td>
           <td class=\"mobileShowHide\">" . stripslashes($info->TF) . "</td>
           <td class=\"mobileShowHide\">" . stripslashes($info->SF) . "</td>
@@ -69,10 +66,9 @@ foreach ($items as $key => $value) {
           <td class=\"mobileShowHide\">" . stripslashes($info->NC) . "</td>
           <td class=\"mobileShowHide\">" . stripslashes($info->TC) . "</td>
           <td class=\"mobileShowHide\">" . stripslashes($info->DF) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->SG) . "</td>
-          ";
+          <td class=\"mobileShowHide\">" . stripslashes($info->SG) . "</td>\n";
         }
-        echo "\n</tr>\n";
+        echo "\n        </tr>\n";
       }
 ?>
         </tbody>
@@ -86,31 +82,29 @@ foreach ($items as $key => $value) {
 </div>
 <div id="modalNutritionLabelParent" style="display:none;">
 <div id="modalNutritionLabel" class="ui-dialog-content ui-widget-content" style="width:auto;min-height:49px;height:auto;" scrolltop="0" scrollleft="0">
-
 <div class="labelWrap fl" style="width: 300px;">
-
 	<input type="hidden" id="valueName" value="{{itemName}}">
   <div>
-      <div><span class="nutrition-item-label">Protein</span> <span class="nutrition-item" >{{PR}}</span></div>
-      <div><span class="nutrition-item-label">Calories</span> <span class="nutrition-item" >{{Cal}}</span></div>
-      <div><span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item" >{{TF}}</span></div>
-      <div style="text-indent: 15px;"><span class="nutrition-item-label">Saturated Fat</span> <span class="nutrition-item" >{{SF}}</span></div>
-      <div style="text-indent: 15px;"><span class="nutrition-item-label">Trans Fat</span> <span class="nutrition-item" >{{TRF}}</span></div>
-      <div><span class="nutrition-item-label">Cholesterol</span> <span class="nutrition-item" >{{CHO}}</span></div>
-      <div><span class="nutrition-item-label">Sodium</span> <span class="nutrition-item" >{{SOD}}</span></div>
-      <div><span class="nutrition-item-label">Net Carbs</span> <span class="nutrition-item" >{{NC}}</span></div>
-      <div><span class="nutrition-item-label">Total Carbs</span> <span class="nutrition-item" >{{TC}}</span></div>
-      <div style="text-indent: 15px;"><span class="nutrition-item-label">Dietary Fiber</span> <span class="nutrition-item" >{{DF}}</span></div>
-      <div style="text-indent: 15px;"><span class="nutrition-item-label">Sugars</span> <span class="nutrition-item" >{{SG}}</span></div>
+      <div><span class="nutrition-item-label">Protein</span> <span class="nutrition-item">{{PR}}</span></div>
+      <div><span class="nutrition-item-label">Calories</span> <span class="nutrition-item">{{Cal}}</span></div>
+      <div><span class="nutrition-item-label">Total Fat</span> <span class="nutrition-item">{{TF}}</span></div>
+      <div class="indent-value"><span class="nutrition-item-label">Saturated Fat</span> <span class="nutrition-item">{{SF}}</span></div>
+      <div class="indent-value"><span class="nutrition-item-label">Trans Fat</span> <span class="nutrition-item">{{TRF}}</span></div>
+      <div><span class="nutrition-item-label">Cholesterol</span> <span class="nutrition-item">{{CHO}}</span></div>
+      <div><span class="nutrition-item-label">Sodium</span> <span class="nutrition-item">{{SOD}}</span></div>
+      <div><span class="nutrition-item-label">Net Carbs</span> <span class="nutrition-item">{{NC}}</span></div>
+      <div><span class="nutrition-item-label">Total Carbs</span> <span class="nutrition-item">{{TC}}</span></div>
+      <div class="indent-value"><span class="nutrition-item-label">Dietary Fiber</span> <span class="nutrition-item">{{DF}}</span></div>
+      <div class="indent-value"><span class="nutrition-item-label">Sugars</span> <span class="nutrition-item">{{SG}}</span></div>
   </div>
   <hr style="border: 2px solid #B2D235;">
   <div>
     <p>
-       <span class="nutrition-item" >Allergens</span><br>
+       <span class="nutrition-item">Allergens</span><br>
        {{ALLERGENS}}
     </p>
     <p>
-       <span class="nutrition-item" >Dietary Preferences</span><br>
+       <span class="nutrition-item">Dietary Preferences</span><br>
        {{DIETARY}}
     </p>
   </div>
