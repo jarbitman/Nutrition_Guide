@@ -86,12 +86,10 @@ foreach ($items as $key => $value) {
   <hr style="border: 2px solid #B2D235;">
   <div>
     <p>
-       <span class="nutrition-item">Allergens</span><br>
-       {{allergens}}
+       <span class="nutrition-item"><strong>Allergens</strong><br>{{allergens}}</span>
     </p>
     <p>
-       <span class="nutrition-item">Dietary Preferences</span><br>
-       {{preferences}}
+       <span class="nutrition-item"><strong>Dietary Preferences</strong><br>{{preferences}}</span>
     </p>
   </div>
 </div>
