@@ -21,22 +21,22 @@ while($row = $result->fetch_object()){
 foreach ($items as $key => $value) {
   echo "  <h3 style='background-color:#b2d235;color:#ffffff;'>" . $groups[$key] . "</h3>
   <div>
-  <table id='nut-" . $key . "' class='table-autosort:0 table-stripeclass:alternate table-autostripe full_width'>
+  <table id='nut-" . $key . "' class='table-autosort:0 table-stripeclass:alternate table-autostripe full_width sort13'>
     <thead>
       <tr style='background-color:#0e2244;'>
         <th style='padding:3px;'></th>\n";
       if(!$isApp){ ?>
-        <th class="table-sortable:alphanumeric mobileShowHide sort13">PROTEIN</th>
-        <th class="table-sortable:alphanumeric mobileShowHide sort13">CALS</th>
-        <th class="table-sortable:alphanumeric mobileShowHide sort13">TOTAL FAT</th>
-        <th class="table-sortable:alphanumeric mobileShowHide sort13">SAT FAT</th>
-        <th class="table-sortable:alphanumeric mobileShowHide sort13">TRANS FAT</th>
-        <th class="table-sortable:alphanumeric mobileShowHide sort13">CHOLESTEROL</th>
-        <th class="table-sortable:alphanumeric mobileShowHide sort13">SODIUM</th>
-        <th class="table-sortable:alphanumeric mobileShowHide sort13">NET CARBS</th>
-        <th class="table-sortable:alphanumeric mobileShowHide sort13">TOTAL CARBS</th>
-        <th class="table-sortable:alphanumeric mobileShowHide sort13">DIETARY FIBER</th>
-        <th class="table-sortable:alphanumeric mobileShowHide sort13">SUGARS</th>
+        <th class="table-sortable:alphanumeric mobileShowHide">PROTEIN</th>
+        <th class="table-sortable:alphanumeric mobileShowHide">CALS</th>
+        <th class="table-sortable:alphanumeric mobileShowHide">TOTAL FAT</th>
+        <th class="table-sortable:alphanumeric mobileShowHide">SAT FAT</th>
+        <th class="table-sortable:alphanumeric mobileShowHide">TRANS FAT</th>
+        <th class="table-sortable:alphanumeric mobileShowHide">CHOLESTEROL</th>
+        <th class="table-sortable:alphanumeric mobileShowHide">SODIUM</th>
+        <th class="table-sortable:alphanumeric mobileShowHide">NET CARBS</th>
+        <th class="table-sortable:alphanumeric mobileShowHide">TOTAL CARBS</th>
+        <th class="table-sortable:alphanumeric mobileShowHide">DIETARY FIBER</th>
+        <th class="table-sortable:alphanumeric mobileShowHide">SUGARS</th>
       <?php
     } ?>
       </tr>

@@ -29,6 +29,9 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="//c2.theproteinbar.com/Nutrition_Guide/label.css">
     <style>
+      table.sort13 th.table-sortable { background-image:none; }
+      table.sort13 th.table-sorted-asc { background-image:url("icons/13_ascending.gif"); }
+      table.sort13 th.table-sorted-desc { background-image:url("icons/13_descending.gif"); }
       th {
         color: #ffffff;
         font-family: 'Trade Gothic Bold Condensed';
