@@ -29,8 +29,9 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="//c2.theproteinbar.com/Nutrition_Guide/label.css">
     <style>
-      th.table-sorted-asc { background-image:url("icons/ascending.gif"); }
-      th.table-sorted-desc { background-image:url("icons/descending.gif"); }
+      th.table-sortable { background-image:url("icons/descending.gif"); background-repeat: no-repeat;}
+      th.table-sorted-asc { background-image:url("icons/ascending.gif"); background-repeat: no-repeat;}
+      th.table-sorted-desc { background-image:url("icons/descending.gif"); background-repeat: no-repeat;}
       .iconset {
 	       margin:5px;
 	       border:1px solid #cccccc;
