@@ -63,8 +63,8 @@ foreach ($groups as $key => $value) {
 <?php
 }
 ?>
-<div class="nutrition-item" style="font-size:-1.5em">Please note that these nutrition values are estimated based on our standard serving portions. As food servings may have a slight variance each time you visit, please expect these values to be with in 10% +/- of your actual meal. If you have any questions about our nutrition calculator, please contact hq@theproteinbar.com</div>
 </div>
+<div class="nutrition-item" style="font-size:-1.5em">Please note that these nutrition values are estimated based on our standard serving portions. As food servings may have a slight variance each time you visit, please expect these values to be with in 10% +/- of your actual meal. If you have any questions about our nutrition calculator, please contact hq@theproteinbar.com</div>
 <div id="nutrition-dialog">
 </div>
 <div id="modalNutritionLabelParent" style="display:none;">
