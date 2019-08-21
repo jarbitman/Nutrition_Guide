@@ -21,12 +21,12 @@ while($row = $result->fetch_object()){
 foreach ($items as $key => $value) {
   echo "  <h3 style='background-color:#b2d235;color:#ffffff;'>" . $groups[$key] . "</h3>
   <div>
-  <table id='nut-" . $key . "' class='table-autosort:0 table-stripeclass:alternate table-autostripe full_width sort13'>
+  <table id='nut-" . $key . "' class='table-autosort:0 table-stripeclass:alternate table-autostripe full_width'>
     <thead>
       <tr style='background-color:#0e2244;'>
         <th style='padding:3px;'></th>\n";
       if(!$isApp){ ?>
-        <th class="table-sortable:alphanumeric mobileShowHide">PROTEIN</th>
+        <th class="table-sortable:alphanumeric mobileShowHide sort13">PROTEIN</th>
         <th class="table-sortable:alphanumeric mobileShowHide">CALS</th>
         <th class="table-sortable:alphanumeric mobileShowHide">TOTAL FAT</th>
         <th class="table-sortable:alphanumeric mobileShowHide">SAT FAT</th>
