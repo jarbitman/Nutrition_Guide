@@ -29,50 +29,41 @@ foreach ($items as $key => $value) {
   <table id='nut-" . $key . "' class='table-stripeclass:alternate table-autostripe full_width'>
     <thead>
       <tr style='background-color:#0e2244;'>
-      <th style='padding:3px;'></th>
-      ";
+      <th style='padding:3px;'></th>\n";
       if(!$isApp){ ?>
-      <th class="table-sortable:numeric mobileShowHide">PROTEIN</th>
-      <th class="table-sortable:numeric mobileShowHide">CALS</th>
-      <th class="table-sortable:numeric mobileShowHide">TOTAL FAT</th>
-      <th class="table-sortable:numeric mobileShowHide">SAT FAT</th>
-      <th class="table-sortable:numeric mobileShowHide">TRANS FAT</th>
-      <th class="table-sortable:numeric mobileShowHide">CHOLESTEROL</th>
-      <th class="table-sortable:numeric mobileShowHide">SODIUM</th>
-      <th class="table-sortable:numeric mobileShowHide">NET CARBS</th>
-      <th class="table-sortable:numeric mobileShowHide">TOTAL CARBS</th>
-      <th class="table-sortable:numeric mobileShowHide">DIETARY FIBER</th>
-      <th class="table-sortable:numeric mobileShowHide">SUGARS</th>
+      <th class="table-sortable:alphanumeric mobileShowHide">PROTEIN</th>
+      <th class="table-sortable:alphanumeric mobileShowHide">CALS</th>
+      <th class="table-sortable:alphanumeric mobileShowHide">TOTAL FAT</th>
+      <th class="table-sortable:alphanumeric mobileShowHide">SAT FAT</th>
+      <th class="table-sortable:alphanumeric mobileShowHide">TRANS FAT</th>
+      <th class="table-sortable:alphanumeric mobileShowHide">CHOLESTEROL</th>
+      <th class="table-sortable:alphanumeric mobileShowHide">SODIUM</th>
+      <th class="table-sortable:alphanumeric mobileShowHide">NET CARBS</th>
+      <th class="table-sortable:alphanumeric mobileShowHide">TOTAL CARBS</th>
+      <th class="table-sortable:alphanumeric mobileShowHide">DIETARY FIBER</th>
+      <th class="table-sortable:alphanumeric mobileShowHide">SUGARS</th>
       <?php
     } ?>
       </tr>
-      </thead>
-      <tbody>
+    </thead>
+    <tbody>
 <?php
       foreach($value as $item){
-        $info=json_decode($item['itemInfo']);
+        $info = json_decode($item['itemInfo'], true);
 
         $itemName = stripslashes($item['itemName']);
         echo "        <tr>
           <td style='padding-top:5px;'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>\n";
           if(!$isApp){
-        echo "          <td class=\"mobileShowHide\">" . stripslashes($info->PR) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->Cal) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->TF) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->SF) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->TRF) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->CHO) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->SOD) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->NC) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->TC) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->DF) . "</td>
-          <td class=\"mobileShowHide\">" . stripslashes($info->SG) . "</td>\n";
+            foreach (['PR', 'Cal', 'TF', 'SF', 'TRF', 'CHO', 'SOD', 'NC', 'TC', 'DF', 'SG'] as $key) {
+              echo '          <td class="mobileShowHide">' . stripslashes($info[$key]) . "</td>\n";
+            }
         }
         echo "        </tr>\n";
       }
 ?>
-        </tbody>
-      </table>
+      </tbody>
+    </table>
   </div>
 <?php
 }
