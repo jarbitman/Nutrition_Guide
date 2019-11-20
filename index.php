@@ -1,8 +1,9 @@
 <?php
-$mysqli = new mysqli("10.80.0.3", "pbconnect", 'KS4DV42pYJ2eNSYB', "pbc2");
-include("header.php");
+$config = json_decode(file_get_contents(__DIR__ . '/config.json'));
+$mysqli = new mysqli($config->host, $config->username, $config->password, "pbc2");
 
 $isApp = !empty($_GET['app']) && $_GET['app'] == "true";
+$isPDF = !empty($_GET['print']) && $_GET['print'] == "true";
 
 $items = array();
 $groups = [1=>"BREAKFAST SCRAMBLES", 8=>"BREAKFAST OATMEAL", 2=>"SHAKES", 3=>"BOWLS/BAR-RITOS", 5=>"SALADS/WRAPS",4=>"CHILIS/SOUPS",  6=>"KIDS MENU", 7=>"COFFEE"];
@@ -14,6 +15,11 @@ $result = $stmt->get_result();
 while($row = $result->fetch_object()){
   $items[$row->itemSection][] = array("itemName" => $row->itemName, "itemInfo" => $row->itemInfo);
 }
+if($isPDF){
+  include("pdfBuild.php");
+  exit;
+}
+include("header.php");
 ?>
 <h4>Click on an item's name to view the nutrition label</h4>
 <div id="accordion">

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "tecnickcom/tc-lib-pdf-font": "^1.8",
+        "mpdf/mpdf": "^8.0"
+    }
+}
