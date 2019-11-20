@@ -1,5 +1,6 @@
 <?php
-$config = json_decode(file_get_contents(__DIR__ . '/config.json'));
+if(file_exists(__DIR__ . '/config.json')){$cf=__DIR__ . '/config.json';}else {$cf='/var/www/html/config.json';}
+$config = json_decode(file_get_contents($cf));
 $mysqli = new mysqli($config->host, $config->username, $config->password, "pbc2");
 
 $isApp = !empty($_GET['app']) && $_GET['app'] == "true";
