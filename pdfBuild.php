@@ -13,7 +13,6 @@ $pdfHead="
 <body style=\"background-image:url('./icons/bg-1000.jpg'); \">";
 
 $pdfFoot="</body>";
-require_once __DIR__ . '/vendor/autoload.php';
 
 $html = '<div style="font-family:tradegothic;color:#FFFFFF;font-weight:400;text-transform:uppercase;letter-spacing:2px;font-size:30;">NUTRITIONAL INFORMATION</div>
 ';
@@ -59,6 +58,8 @@ foreach ($groups as $key => $value) {
     $html.="
     </table></div>";
 }
+$path = (getenv('MPDF_ROOT')) ? getenv('MPDF_ROOT') : __DIR__;
+require_once __DIR__ . '/vendor/autoload.php';
 $defaultConfig = (new Mpdf\Config\ConfigVariables())->getDefaults();
 $fontDirs = $defaultConfig['fontDir'];
 $defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
@@ -72,19 +73,19 @@ $mpdf = new \Mpdf\Mpdf([
 	'margin_bottom' => 5,
 	'margin_header' => 0,
 	'margin_footer' => 0,
-  'fontDir' => array_merge($fontDirs, [__DIR__]),
+  'fontDir' => array_merge($fontDirs, [__DIR__.'/font']),
 'fontdata' => $fontData + [
   'lora' => [
-    'R' => 'font/lora-regular.ttf',
-    'I' => 'font/lora-italic.ttf',
+    'R' => 'lora-regular.ttf',
+    'I' => 'lora-italic.ttf',
   ],
   'gothamblack' => [
-    'R' => 'font/gotham-black.ttf',
-    'I' => 'font/gotham-black.ttf',
+    'R' => 'gotham-black.ttf',
+    'I' => 'gotham-black.ttf',
   ],
   'tradegothic' => [
-    'R' => 'font/tradegothic.ttf',
-    'I' => 'font/tradegothici.ttf',
+    'R' => 'tradegothic.ttf',
+    'I' => 'tradegothici.ttf',
   ]
 ],
 'default_font' => 'lora'
