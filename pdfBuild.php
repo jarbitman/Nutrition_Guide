@@ -1,12 +1,37 @@
 <?php
 $stylesheet="
 .bluehead{
-  font-family:\"lora\";
+  font-size:12;
+  font-family:\"tradegothic\";
   color:#FFFFFF;
+  background-color:#0e2244;
+  margin 2px;
+}
+th.bluehead{
+  border-color:#0e2244;
+  border-width: 1px;
+  border-style: solid;
+  background-color:#0e2244;
 }
 .greenhead{
-  font-family:\"gothamblack\";
+  font-family:\"tradegothic\";
   color:#FFFFFF;
+  padding: 5px;
+}
+.pageheader{
+  font-family:tradegothic;
+  color:#FFFFFF;
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:50;
+  width:100%;
+  height:30%;
+  padding-top:25%;
+  text-align:center;
+}
+th {
+  background-color:#0e2244;
 }
 ";
 $pdfHead="
@@ -14,26 +39,26 @@ $pdfHead="
 
 $pdfFoot="</body>";
 
-$html = '<div style="font-family:tradegothic;color:#FFFFFF;font-weight:400;text-transform:uppercase;letter-spacing:2px;font-size:30;">NUTRITIONAL INFORMATION</div>
-';
+$html = '<div class="pageheader">NUTRITIONAL INFORMATION<br><span style="font-size:30;">'.date("Y").'</span></div>
+<div class="pageheader"><img src="./icons/PBK-Logo_Primary_White.png"></div>';
 foreach ($groups as $key => $value) {
   $html.= "
   <pagebreak sheet-size=\"A4-P\" />
-  <div style=\"width:100%;height:100%;background-color:#FFFFFF;\">
-  <table style=\"width:100%;\">
+  <div style=\"width:100%;height:100%;background-color:#ffffff;\">
+  <table style=\"width:100%;border-collapse:collapse;\">
     <thead>
-      <tr style=\"background-color:#0e2244;\">
-        <th style='padding:3px;'></th>\n
-        <th class=\"bluehead\"><span style='padding-left:15px;'>PROTEIN</span></th>
-        <th class=\"bluehead\"><span style='padding-left:15px;'>CALS</span></th>
-        <th class=\"bluehead\"><span style='padding-left:15px;'>TOTAL FAT</span></th>
-        <th class=\"bluehead\"><span style='padding-left:15px;'>SAT FAT</span></th>
-        <th class=\"bluehead\"><span style='padding-left:15px;'>TRANS FAT</span></th>
-        <th class=\"bluehead\"><span style='padding-left:15px;'>CHOLESTEROL</span></th>
+      <tr>
+        <th class=\"bluehead\" style='padding:3px;width:30%;'><span style='color:#0e2244;'>Name</span></th>
+        <th class=\"bluehead\" style=''><span style='padding:2px;'>PROTEIN</span></th>
+        <th class=\"bluehead\"><span style='padding-left:15px;'>CALORIES</span></th>
+        <th class=\"bluehead\"><span style='padding-left:15px;'>TOTAL<br>FAT</span></th>
+        <th class=\"bluehead\"><span style='padding-left:15px;'>SAT<br>FAT</span></th>
+        <th class=\"bluehead\"><span style='padding-left:15px;'>TRANS<br>FAT</span></th>
+        <th class=\"bluehead\"><span style='padding-left:15px;'>CHOLES-<br>TEROL</span></th>
         <th class=\"bluehead\"><span style='padding-left:15px;'>SODIUM</span></th>
-        <th class=\"bluehead\"><span style='padding-left:15px;'>NET CARBS</span></th>
-        <th class=\"bluehead\"><span style='padding-left:15px;'>TOTAL CARBS</span></th>
-        <th class=\"bluehead\"><span style='padding-left:15px;'>DIETARY FIBER</span></th>
+        <th class=\"bluehead\"><span style='padding-left:15px;'>NET<br>CARBS</span></th>
+        <th class=\"bluehead\"><span style='padding-left:15px;'>TOTAL<br>CARBS</span></th>
+        <th class=\"bluehead\"><span style='padding-left:15px;'>DIETARY<br>FIBER</span></th>
         <th class=\"bluehead\"><span style='padding-left:15px;'>SUGARS</span></th>
         </tr>
       </thead>
@@ -65,12 +90,12 @@ $fontDirs = $defaultConfig['fontDir'];
 $defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
 $fontData = $defaultFontConfig['fontdata'];
 $mpdf = new \Mpdf\Mpdf([
-	'mode' => 'c',
+	'mode' => 's',
   'format' => 'A4-P',
 	'margin_left' => 0,
 	'margin_right' => 0,
 	'margin_top' => 0,
-	'margin_bottom' => 5,
+	'margin_bottom' => 0,
 	'margin_header' => 0,
 	'margin_footer' => 0,
   'fontDir' => array_merge($fontDirs, [__DIR__.'/font']),
@@ -90,7 +115,6 @@ $mpdf = new \Mpdf\Mpdf([
 ],
 'default_font' => 'lora'
 ]);
-$mpdf->AddFontDirectory("./font");
 $mpdf->WriteHTML($stylesheet,\Mpdf\HTMLParserMode::HEADER_CSS);
 $mpdf->WriteHTML($pdfHead.$html.$pdfFoot);
 $mpdf->Output();
