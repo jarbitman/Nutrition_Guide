@@ -40,7 +40,7 @@ $pdfHead="
 $pdfFoot="</body>";
 
 $html = '<div class="pageheader">NUTRITIONAL INFORMATION<br><span style="font-size:30;">'.date("Y").'</span></div>
-<div class="pageheader"><img src="./icons/PBK-Logo_Primary_White.png"></div>';
+<div class="pageheader" style="margin-top:25%;"><img src="./icons/PBK-Logo_Primary_White.png"  /></div>';
 foreach ($groups as $key => $value) {
   $html.= "
   <pagebreak sheet-size=\"A4-P\" />
