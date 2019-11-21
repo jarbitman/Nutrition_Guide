@@ -8,12 +8,14 @@ $stylesheet="
   margin 2px;
 }
 th.bluehead{
+  font-size:12;
   border-color:#0e2244;
   border-width: 1px;
   border-style: solid;
   background-color:#0e2244;
 }
 .greenhead{
+  font-size:12;
   font-family:\"tradegothic\";
   color:#FFFFFF;
   padding: 5px;
@@ -33,17 +35,55 @@ th.bluehead{
 th {
   background-color:#0e2244;
 }
+td{
+  font-family: 'Lora';
+  font-size:10;
+  padding:3px;
+}
+tr.white{
+  background-color:#FFFFFF;
+  border-color:#FFFFFF;
+  border-width: 1px;
+  border-style: solid;
+}
+tr.grey{
+  background-color:#e7e4e3;
+  border-color:#e7e4e3;
+  border-width: 1px;
+  border-style: solid;
+}
+td.footer{
+  color:#888584;
+}
 ";
 $pdfHead="
-<body style=\"background-image:url('./icons/bg-1000.jpg'); \">";
+<body>";
 
 $pdfFoot="</body>";
 
-$html = '<div class="pageheader">NUTRITIONAL INFORMATION<br><span style="font-size:30;">'.date("Y").'</span></div>
-<div class="pageheader" style="margin-top:25%;"><img src="./icons/PBK-Logo_Primary_White.png"  /></div>';
+$html = '
+<div style="background-image:url(\'./icons/bg-1000.jpg\');">
+<div class="pageheader">NUTRITIONAL INFORMATION<br><span style="font-size:30;">'.date("Y").'</span></div>
+<div class="pageheader" style="margin-top:25%;"><img src="./icons/PBK-Logo_Primary_White.png"  /></div></div>';
 foreach ($groups as $key => $value) {
   $html.= "
   <pagebreak sheet-size=\"A4-P\" />
+  <!--mpdf
+  <htmlpagefooter name=\"myHTMLHeader\"><div style='width:100%;'>
+  <table style='width:100%;'>
+    <tr>
+      <td class='footer'><img src='./icons/PBK-Logo_100.png' /></td>
+      <td class='footer'>".date("Y")." Nutritional Info Chart</td>
+      <td class='footer'>Printed: ".date("m/d/Y")."</td>
+      </tr>
+      </table>
+    </div>
+    </htmlpagefooter>
+  mpdf-->
+  <!--mpdf
+  <sethtmlpagefooter name=\"myHTMLHeader\" page=\"O\" value=\"on\" show-this-page=\"1\" />
+  <sethtmlpagefooter name=\"myHTMLHeader\" page=\"E\" value=\"on\" />
+  mpdf-->
   <div style=\"width:100%;height:100%;background-color:#ffffff;\">
   <table style=\"width:100%;border-collapse:collapse;\">
     <thead>
@@ -66,11 +106,13 @@ foreach ($groups as $key => $value) {
       <tr style=\"background-color:#b2d235;color:#FFFFFF;\">
         <td class=\"greenhead\" colspan=\"12\">" . $value . "</td>
       </tr>";
+      $count=0;
       foreach($items[$key] as $item){
+        $trStyle=(($count % 2) == 0) ? "white" : "grey";
         $info = json_decode($item['itemInfo'], true);
 
         $itemName = stripslashes($item['itemName']);
-        $html.= "        <tr style=\"font-family: 'Lora';\">
+        $html.= "        <tr class=\"".$trStyle."\">
           <td style='padding-top:5px;'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>\n";
           if(!$isApp){
             foreach (['PR', 'Cal', 'TF', 'SF', 'TRF', 'CHO', 'SOD', 'NC', 'TC', 'DF', 'SG'] as $key) {
@@ -78,6 +120,7 @@ foreach ($groups as $key => $value) {
             }
         }
         $html.= "        </tr>\n";
+        $count++;
       }
 
     $html.="
@@ -92,12 +135,12 @@ $fontData = $defaultFontConfig['fontdata'];
 $mpdf = new \Mpdf\Mpdf([
 	'mode' => 's',
   'format' => 'A4-P',
-	'margin_left' => 0,
-	'margin_right' => 0,
-	'margin_top' => 0,
-	'margin_bottom' => 0,
-	'margin_header' => 0,
-	'margin_footer' => 0,
+	'margin_left' => 10,
+	'margin_right' => 10,
+	'margin_top' => 10,
+	'margin_bottom' => 10,
+	'margin_header' => 10,
+	'margin_footer' => 10,
   'fontDir' => array_merge($fontDirs, [__DIR__.'/font']),
 'fontdata' => $fontData + [
   'lora' => [
@@ -115,6 +158,7 @@ $mpdf = new \Mpdf\Mpdf([
 ],
 'default_font' => 'lora'
 ]);
+$mpdf->SetTitle("PBK ".date("Y")." Nutritional Info Chart");
 $mpdf->WriteHTML($stylesheet,\Mpdf\HTMLParserMode::HEADER_CSS);
 $mpdf->WriteHTML($pdfHead.$html.$pdfFoot);
 $mpdf->Output();
