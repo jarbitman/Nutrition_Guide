@@ -22,7 +22,8 @@ if($isPDF){
 }
 include("header.php");
 ?>
-<h4>Click on an item's name to view the nutrition label</h4>
+<div><img src="./icons/NutritionInformation-01.png" /></div>
+<h3>Click on an item's name to view the nutrition label</h3>
 <div id="accordion">
 <?php
 foreach ($groups as $key => $value) {
