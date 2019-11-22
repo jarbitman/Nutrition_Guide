@@ -22,8 +22,8 @@ if($isPDF){
 }
 include("header.php");
 ?>
-<div><img src="./icons/NutritionInformation-01.png" style="padding-top:10px;"/></div>
-<h3 style="padding-left:30px;padding-top:10px;">Click on an item's name to view the nutrition label</h3>
+<div><img src="./icons/NutritionInformation-01.png" /></div>
+<h3 style="padding-left:30px;">Click on an item's name to view the nutrition label</h3>
 <div id="accordion">
 <?php
 foreach ($groups as $key => $value) {
@@ -73,8 +73,8 @@ foreach ($groups as $key => $value) {
 ?>
 </div>
 <div style="padding-left:30px;">
-<div class="nutrition-item" style="font-size:10px;">Please note that these nutrition values are estimated based on our standard serving portions. As food servings may have a slight variance each time you visit, please expect these values to be with in 10% +/- of your actual meal. If you have any questions about our nutrition calculator, please contact hq@theproteinbar.com</div>
-<br><a class="btn btn-brand" href="?print=true" target="_blank">Download/Print</a>
+<div class="nutrition-item" style="font-size:10px;padding-top:10px;">Please note that these nutrition values are estimated based on our standard serving portions. As food servings may have a slight variance each time you visit, please expect these values to be with in 10% +/- of your actual meal. If you have any questions about our nutrition calculator, please contact hq@theproteinbar.com</div>
+<br><a class="btn btn-brand" href="?print=true" target="_blank" style="margin-bottom:10px;">Download/Print</a></br>
 </div>
 <div id="nutrition-dialog">
 </div>
