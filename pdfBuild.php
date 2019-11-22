@@ -113,13 +113,14 @@ foreach ($groups as $key => $value) {
 
         $itemName = stripslashes($item['itemName']);
         $html.= "        <tr class=\"".$trStyle."\">
-          <td style='padding-top:5px;'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>\n";
+          <td style='padding-top:5px;'><div class='itemName'>" . $itemName . "</div></td>\n";
           if(!$isApp){
             foreach (['PR', 'Cal', 'TF', 'SF', 'TRF', 'CHO', 'SOD', 'NC', 'TC', 'DF', 'SG'] as $key) {
               $html.= '          <td>' . stripslashes($info[$key]) . "</td>\n";
             }
         }
         $html.= "        </tr>\n";
+        $html.= "<tr class=\"".$trStyle."\"><td colspan=\"12\"><i>Allergens: ".$info['allergens']."</i></td></tr>\n";
         $count++;
       }
 

@@ -22,8 +22,8 @@ if($isPDF){
 }
 include("header.php");
 ?>
-<div><img src="./icons/NutritionInformation-01.png" /></div>
-<h3 style="padding-left:30px;">Click on an item's name to view the nutrition label</h3>
+<div><img src="./icons/NutritionInformation-01.png" style="padding-top:10px;"/></div>
+<h3 style="padding-left:30px;padding-top:10px;">Click on an item's name to view the nutrition label</h3>
 <div id="accordion">
 <?php
 foreach ($groups as $key => $value) {
@@ -59,7 +59,7 @@ foreach ($groups as $key => $value) {
           <td style='padding-top:5px;'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>\n";
           if(!$isApp){
             foreach (['PR', 'Cal', 'TF', 'SF', 'TRF', 'CHO', 'SOD', 'NC', 'TC', 'DF', 'SG'] as $key) {
-              echo '          <td class="mobileShowHide">' . stripslashes($info[$key]) . "</td>\n";
+              echo '          <td class="mobileShowHide" style="text-align:center;">' . stripslashes($info[$key]) . "</td>\n";
             }
         }
         echo "        </tr>\n";
