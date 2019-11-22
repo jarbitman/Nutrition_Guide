@@ -10,7 +10,7 @@ $items = array();
 $groups = [1=>"BREAKFAST SCRAMBLES", 8=>"BREAKFAST OATMEAL", 2=>"SHAKES", 3=>"BOWLS/BAR-RITOS", 5=>"SALADS/WRAPS",4=>"CHILIS/SOUPS",  6=>"KIDS MENU", 7=>"COFFEE"];
 
 $stmt = $mysqli->stmt_init();
-$stmt->prepare("SELECT itemName, itemInfo, itemSection FROM pbc_public_nutritional WHERE published=1 ORDER BY itemSection,itemName");
+$stmt->prepare("SELECT itemName, itemInfo, itemSection FROM pbc_public_nutritional WHERE published=1 ORDER BY itemName");
 $stmt->execute();
 $result = $stmt->get_result();
 while($row = $result->fetch_object()){
@@ -23,16 +23,16 @@ if($isPDF){
 include("header.php");
 ?>
 <div><img src="./icons/NutritionInformation-01.png" /></div>
-<h3>Click on an item's name to view the nutrition label</h3>
+<h3 style="padding-left:30px;">Click on an item's name to view the nutrition label</h3>
 <div id="accordion">
 <?php
 foreach ($groups as $key => $value) {
   echo "  <h3 style='background-color:#b2d235;color:#ffffff;'>" . $value . "</h3>
   <div>
-  <table id='nut-" . $key . "' class='table-autosort:0 table-stripeclass:alternate table-autostripe full_width'>
+  <table id='nut-" . $key . "' class=' table-stripeclass:alternate table-autostripe full_width'>
     <thead>
       <tr style='background-color:#0e2244;'>
-        <th style='padding:3px;'></th>\n";
+        <th class=\"\" style='padding:3px;'></th>\n";
       if(!$isApp){ ?>
         <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">PROTEIN</span></th>
         <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">CALS</span></th>
@@ -72,8 +72,10 @@ foreach ($groups as $key => $value) {
 }
 ?>
 </div>
+<div style="padding-left:30px;">
 <div class="nutrition-item" style="font-size:10px;">Please note that these nutrition values are estimated based on our standard serving portions. As food servings may have a slight variance each time you visit, please expect these values to be with in 10% +/- of your actual meal. If you have any questions about our nutrition calculator, please contact hq@theproteinbar.com</div>
-<div><a class="btn btn-brand" href="?print=true" target="_blank">Download/Print</a></div>
+<br><a class="btn btn-brand" href="?print=true" target="_blank">Download/Print</a>
+</div>
 <div id="nutrition-dialog">
 </div>
 <div id="modalNutritionLabelParent" style="display:none;">
