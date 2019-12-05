@@ -162,6 +162,6 @@ $mpdf = new \Mpdf\Mpdf([
 $mpdf->SetTitle("PBK ".date("Y")." Nutritional Info Chart");
 $mpdf->WriteHTML($stylesheet,\Mpdf\HTMLParserMode::HEADER_CSS);
 $mpdf->WriteHTML($pdfHead.$html.$pdfFoot);
-$mpdf->Output("PBK_Nutritional_Guide-".date("Ymd").".pdf");
+$mpdf->Output("/var/www/html/c2.theproteinbar.com/RaupCWYghyVCKxyP6Vwa/PBK_Nutritional_Guide-".date("Ymd").".pdf");
 //print_r($items);
 //echo $pdfHead.$html.$pdfFoot;
