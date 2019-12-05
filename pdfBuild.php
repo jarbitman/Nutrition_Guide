@@ -162,6 +162,14 @@ $mpdf = new \Mpdf\Mpdf([
 $mpdf->SetTitle("PBK ".date("Y")." Nutritional Info Chart");
 $mpdf->WriteHTML($stylesheet,\Mpdf\HTMLParserMode::HEADER_CSS);
 $mpdf->WriteHTML($pdfHead.$html.$pdfFoot);
-$mpdf->Output();
+$mpdf->Output("/var/www/html/c2.theproteinbar.com/RaupCWYghyVCKxyP6Vwa/PBK_Nutritional_Guide-".date("Ymd").".pdf");
+$filename = "/var/www/html/c2.theproteinbar.com/RaupCWYghyVCKxyP6Vwa/PBK_Nutritional_Guide-".date("Ymd").".pdf";
+$file = $path;
+$filename = "PBK_Nutritional_Guide-".date("Ymd").".pdf";
+header('Content-type: application/pdf');
+header('Content-Disposition: inline; filename="' . $filename . '"');
+header('Content-Transfer-Encoding: binary');
+header('Accept-Ranges: bytes');
+echo file_get_contents($file);
 //print_r($items);
 //echo $pdfHead.$html.$pdfFoot;
