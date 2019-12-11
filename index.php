@@ -7,7 +7,15 @@ $isApp = !empty($_GET['app']) && $_GET['app'] == "true";
 $isPDF = !empty($_GET['print']) && $_GET['print'] == "true";
 
 $items = array();
-$groups = [1=>"BREAKFAST SCRAMBLES", 8=>"BREAKFAST OATMEAL", 2=>"SHAKES", 3=>"BOWLS/BAR-RITOS", 5=>"SALADS/WRAPS",4=>"CHILIS/SOUPS",  6=>"KIDS MENU", 7=>"COFFEE"];
+$groups[1]="BREAKFAST SCRAMBLES";
+$groups[8]="BREAKFAST OATMEAL";
+$groups[2]="SHAKES";
+$groups[3]="BOWLS/BAR-RITOS";
+$groups[9]="BOWLS with RICED CAULIFLOWER";
+$groups[4]="CHILIS/SOUPS";
+$groups[5]="SALADS/WRAPS";
+$groups[6]="KIDS MENU";
+$groups[7]="COFFEE";
 
 $stmt = $mysqli->stmt_init();
 $stmt->prepare("SELECT itemName, itemInfo, itemSection FROM pbc_public_nutritional WHERE published=1 ORDER BY itemName");
