@@ -10,6 +10,7 @@ $items = array();
 $groups[1]="BREAKFAST SCRAMBLES";
 $groups[8]="BREAKFAST OATMEAL";
 $groups[2]="SHAKES";
+$groups[9]="SUPER BLENDS";
 $groups[3]="BOWLS/BAR-RITOS";
 $groups[9]="BOWLS with RICED CAULIFLOWER";
 $groups[4]="CHILIS/SOUPS";
