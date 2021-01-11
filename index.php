@@ -5,20 +5,17 @@ $mysqli = new mysqli($config->host, $config->username, $config->password, "pbc2"
 
 $isApp = !empty($_GET['app']) && $_GET['app'] == "true";
 $isPDF = !empty($_GET['print']) && $_GET['print'] == "true";
+$stmt = $mysqli->stmt_init();
 
 $items = array();
-$groups[1]="BREAKFAST SCRAMBLES";
-$groups[8]="BREAKFAST OATMEAL";
-$groups[2]="SHAKES";
-$groups[9]="SUPER BLENDS";
-$groups[3]="BOWLS/BAR-RITOS";
-$groups[9]="BOWLS with RICED CAULIFLOWER";
-$groups[4]="CHILIS/SOUPS";
-$groups[5]="SALADS/WRAPS";
-$groups[6]="KIDS MENU";
-$groups[7]="COFFEE";
+$groups = array();
+$stmt->prepare("SELECT * FROM pbc_public_nutritional_sections ORDER BY viewOrder");
+$stmt->execute();
+$result = $stmt->get_result();
+while($section = $result->fetch_object()){
+    $groups[$section->sectionID] = $section->section;
+}
 
-$stmt = $mysqli->stmt_init();
 $stmt->prepare("SELECT itemName, itemInfo, itemSection FROM pbc_public_nutritional WHERE published=1 ORDER BY itemName");
 $stmt->execute();
 $result = $stmt->get_result();
@@ -36,48 +33,56 @@ include("header.php");
 <div id="accordion">
 <?php
 foreach ($groups as $key => $value) {
-  echo "  <h3 style='background-color:#b2d235;color:#ffffff;'>" . $value . "</h3>
+    if(count($items[$key])>0) {
+        echo "  <h3 style='background-color:#b2d235;color:#ffffff;'>" . $value . "</h3>
   <div>
   <table id='nut-" . $key . "' class=' table-stripeclass:alternate table-autostripe full_width'>
     <thead>
       <tr style='background-color:#0e2244;'>
         <th class=\"\" style='padding:3px;'></th>\n";
-      if(!$isApp){ ?>
-        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">PROTEIN</span></th>
-        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">CALS</span></th>
-        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">TOTAL FAT</span></th>
-        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">SAT FAT</span></th>
-        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">TRANS FAT</span></th>
-        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">CHOLESTEROL</span></th>
-        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">SODIUM</span></th>
-        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">NET CARBS</span></th>
-        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">TOTAL CARBS</span></th>
-        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">DIETARY FIBER</span></th>
-        <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">SUGARS</span></th>
-      <?php
-    } ?>
-      </tr>
-    </thead>
-    <tbody>
-<?php
-      foreach($items[$key] as $item){
-        $info = json_decode($item['itemInfo'], true);
+        if (!$isApp) { ?>
+            <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">PROTEIN</span></th>
+            <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">CALS</span></th>
+            <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">TOTAL FAT</span>
+            </th>
+            <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">SAT FAT</span></th>
+            <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">TRANS FAT</span>
+            </th>
+            <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">CHOLESTEROL</span>
+            </th>
+            <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">SODIUM</span></th>
+            <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">NET CARBS</span>
+            </th>
+            <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">TOTAL CARBS</span>
+            </th>
+            <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">DIETARY FIBER</span>
+            </th>
+            <th class="table-sortable:alphanumeric mobileShowHide"><span style="padding-left:15px;">SUGARS</span></th>
+            <?php
+        } ?>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($items[$key] as $item) {
+            $info = json_decode($item['itemInfo'], true);
 
-        $itemName = stripslashes($item['itemName']);
-        echo "        <tr>
-          <td style='padding-top:5px;'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='". str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>\n";
-          if(!$isApp){
-            foreach (['PR', 'Cal', 'TF', 'SF', 'TRF', 'CHO', 'SOD', 'NC', 'TC', 'DF', 'SG'] as $key) {
-              echo '          <td class="mobileShowHide" style="text-align:center;">' . stripslashes($info[$key]) . "</td>\n";
+            $itemName = stripslashes($item['itemName']);
+            echo "        <tr>
+          <td style='padding-top:5px;'><div class='itemName' id='" . strtolower(preg_replace("/[^a-z]/i", "", urlencode($itemName))) . "' data-title='" . str_replace("+", " ", urlencode(strtoupper($itemName))) . "' data-options='" . $item['itemInfo'] . "'>" . $itemName . "</div></td>\n";
+            if (!$isApp) {
+                foreach (['PR', 'Cal', 'TF', 'SF', 'TRF', 'CHO', 'SOD', 'NC', 'TC', 'DF', 'SG'] as $key) {
+                    echo '          <td class="mobileShowHide" style="text-align:center;">' . stripslashes($info[$key]) . "</td>\n";
+                }
             }
+            echo "        </tr>\n";
         }
-        echo "        </tr>\n";
-      }
-?>
-      </tbody>
-    </table>
-  </div>
-<?php
+        ?>
+        </tbody>
+        </table>
+        </div>
+    <?php
+    }
 }
 ?>
 </div>
